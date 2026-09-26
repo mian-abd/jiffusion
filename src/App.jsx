@@ -3,8 +3,17 @@ import { fromAscii } from './lib/frame.js'
 import { encodeVideo } from './lib/video.js'
 
 const POLL_MS = 400
+const key = (k) => `c${String(k).padStart(3, '0')}`
 
-// A frame rendered as monochrome ASCII (terminal-green, tinted by intensity).
+// Jev's number for a candidate: Score's expected level (0..3) or Choice's probability.
+function candidateScore(step, k) {
+  const s = step.scores?.[key(k)]?.score
+  if (s != null) return s
+  const p = step.answer?.probabilities?.[key(k)]
+  return p == null ? null : p * 3
+}
+
+// A frame rendered as monochrome ASCII, tinted by average intensity.
 function FrameView({ text, size = 1, dim = false }) {
   const avg = useMemo(() => {
     const cells = text.replace(/\n/g, '')
@@ -16,11 +25,30 @@ function FrameView({ text, size = 1, dim = false }) {
   return (
     <pre
       className={`frame${dim ? ' dim' : ''}`}
-      style={{ color: `hsl(150,75%,${light}%)`, fontSize: `${size * 12}px`, lineHeight: '1em' }}
+      style={{ color: `hsl(0,0%,${light}%)`, fontSize: `${size * 12}px`, lineHeight: '1em' }}
     >
       {text}
     </pre>
   )
+}
+
+// Pixel-perfect thumbnail: one filled rect per cell.
+function Thumb({ text, px = 4, dim = false }) {
+  const ref = useRef(null)
+  const f = useMemo(() => fromAscii(text), [text])
+  useEffect(() => {
+    const ctx = ref.current.getContext('2d')
+    ctx.fillStyle = '#050505'
+    ctx.fillRect(0, 0, f.w * px, f.h * px)
+    for (let y = 0; y < f.h; y++) {
+      for (let x = 0; x < f.w; x++) {
+        const v = f.data[y * f.w + x]
+        ctx.fillStyle = `hsl(0,0%,${100 - v * 22}%)`
+        ctx.fillRect(x * px, y * px, px, px)
+      }
+    }
+  }, [f, px])
+  return <canvas ref={ref} width={f.w * px} height={f.h * px} className={dim ? 'dim' : ''} />
 }
 
 function CodeBlock({ text }) {
@@ -42,6 +70,167 @@ function CodeBlock({ text }) {
     </div>
   )
 }
+
+// ---- branch tree: every accepted decision as a row of the candidates Jev saw ----
+
+const NW = 104
+const NH = 118
+const GX = 12
+const GY = 44
+const PITCH = NW + GX
+
+function buildTree(noise, steps) {
+  const root = { label: 'seed noise', kids: [], text: noise }
+  let parent = root
+  let prevWinCol = -1
+  // Only steps where Jev accepted an edit change the picture; kept steps are skipped.
+  steps.filter((st) => !st.kept && st.selected_index != null).forEach((st) => {
+    const n = Math.min(8, st.candidates.length)
+    const order = st.candidates.map((_, k) => k).slice(0, n)
+    if (!order.includes(st.selected_index)) order[order.length - 1] = st.selected_index
+    const winCol = prevWinCol < n / 2 ? Math.min(n - 2, 6) : 1
+    const others = order.filter((k) => k !== st.selected_index).slice(0, n - 1)
+    const slots = Array(n).fill(null)
+    slots[winCol] = st.selected_index
+    others.forEach((k, i) => {
+      slots[i < winCol ? i : i + 1] = k
+    })
+    prevWinCol = winCol
+    const nodes = slots.map((k) => ({
+      k,
+      text: st.candidates[k],
+      score: candidateScore(st, k),
+      win: k === st.selected_index,
+      step: st.step,
+      kind: st.edits?.[k]?.kind ?? 'start',
+      kids: [],
+    }))
+    parent.kids = nodes
+    parent = nodes[winCol]
+  })
+  return root
+}
+
+function place(node, cx, depth = 0) {
+  node.x = cx - NW / 2
+  node.y = depth * (NH + GY)
+  node.depth = depth
+  if (node.kids.length) {
+    const row = node.kids.length * PITCH - GX
+    let kx = cx - row / 2 + NW / 2
+    node.kids.forEach((k) => {
+      place(k, kx, depth + 1)
+      kx += PITCH
+    })
+  }
+}
+
+function collect(node, out = []) {
+  out.push(node)
+  node.kids.forEach((k) => collect(k, out))
+  return out
+}
+
+function TreeDiagram({ noise, steps }) {
+  const [tx, setTx] = useState(8)
+  const [ty, setTy] = useState(8)
+  const [scale, setScale] = useState(1)
+  const svgRef = useRef(null)
+  const drag = useRef(null)
+
+  const { nodes, edges, vbw, vbh } = useMemo(() => {
+    const root = buildTree(noise, steps)
+    place(root, (8 * PITCH - GX) / 2)
+    const nodes = collect(root)
+    const minX = Math.min(...nodes.map((n) => n.x))
+    const off = minX < 8 ? 8 - minX : 0
+    nodes.forEach((n, i) => {
+      n.id = i
+      n.x += off
+    })
+    const edges = nodes.flatMap((n) => n.kids.map((k) => ({ from: n, to: k })))
+    const w = Math.max(...nodes.map((n) => n.x + NW)) + 8
+    return { nodes, edges, vbw: w, vbh: Math.max(...nodes.map((n) => n.y)) + NH }
+  }, [noise, steps])
+
+  useEffect(() => {
+    const box = svgRef.current?.parentElement
+    if (!box) return
+    const s = Math.min(1, (box.clientWidth - 16) / vbw, (box.clientHeight - 16) / vbh)
+    setScale(s)
+    setTx((box.clientWidth - vbw * s) / 2)
+    setTy(8)
+  }, [vbw, vbh])
+
+  const onDown = (e) => {
+    drag.current = { x: e.clientX, y: e.clientY, tx, ty }
+    e.currentTarget.setPointerCapture(e.pointerId)
+  }
+  const onMove = (e) => {
+    if (!drag.current) return
+    setTx(drag.current.tx + e.clientX - drag.current.x)
+    setTy(drag.current.ty + e.clientY - drag.current.y)
+  }
+  const onUp = () => (drag.current = null)
+  const onWheel = (e) => {
+    e.preventDefault()
+    const rect = svgRef.current.getBoundingClientRect()
+    const mx = e.clientX - rect.left
+    const my = e.clientY - rect.top
+    const ns = Math.min(3, Math.max(0.2, scale * (e.deltaY > 0 ? 0.9 : 1.1)))
+    setTx(mx - ((mx - tx) / scale) * ns)
+    setTy(my - ((my - ty) / scale) * ns)
+    setScale(ns)
+  }
+
+  return (
+    <div className="treebox">
+      <svg
+        ref={svgRef}
+        className="treecanv"
+        width={vbw}
+        height={vbh}
+        onPointerDown={onDown}
+        onPointerMove={onMove}
+        onPointerUp={onUp}
+        onPointerLeave={onUp}
+        onWheel={onWheel}
+      >
+        <g transform={`translate(${tx} ${ty}) scale(${scale})`}>
+          {edges.map((e, i) => {
+            const x1 = e.from.x + NW / 2
+            const y1 = e.from.y + NH - 26
+            const x2 = e.to.x + NW / 2
+            const y2 = e.to.y
+            const mid = y1 + GY / 2
+            return (
+              <path key={i} className={`edge${e.to.win ? ' hot' : ''}`} d={`M ${x1} ${y1} V ${mid} H ${x2} V ${y2}`} />
+            )
+          })}
+          {nodes.map((n) => (
+            <g key={n.id} className={`tnode${n.win ? ' win' : ''}`}>
+              <foreignObject x={n.x} y={n.y} width={NW} height={NH - 26}>
+                <div className="timg">
+                  <Thumb text={n.text} px={3} />
+                </div>
+              </foreignObject>
+              <text x={n.x + NW / 2} y={n.y + NH - 12} className="tscore">
+                {n.depth === 0
+                  ? 'noise'
+                  : `${n.win ? '✓ ' : ''}${n.kind}${n.score != null ? ` ${n.score.toFixed(2)}` : ''}`}
+              </text>
+            </g>
+          ))}
+        </g>
+      </svg>
+      <div className="treehint">
+        drag to pan · scroll to zoom · <b>✓</b> = the edit Jev accepted · kept steps hidden
+      </div>
+    </div>
+  )
+}
+
+// ---- app ----
 
 function verdict(step) {
   if (step.step === 1) return 'start'
@@ -202,7 +391,7 @@ export default function App() {
               {inspect && (
                 <div className="side">
                   <div className="stephead">clean estimate x₀ (what Jev judges)</div>
-                  <FrameView text={inspect.x0} size={0.8} />
+                  <Thumb text={inspect.x0} px={6} />
                   <div className="stephead">
                     {verdict(inspect)}
                     {inspect.current_score != null && <> · score <b>{inspect.current_score.toFixed(2)}</b> / 3</>}
@@ -239,14 +428,14 @@ export default function App() {
                 </div>
                 <div className="cands">
                   {inspect.candidates.map((c, k) => {
-                    const s = inspect.scores?.[`c${String(k).padStart(3, '0')}`]
+                    const s = candidateScore(inspect, k)
                     const win = k === inspect.selected_index
                     return (
                       <div className={`cand${win ? ' win' : ''}`} key={k}>
-                        <FrameView text={c} size={0.5} dim={!win} />
+                        <Thumb text={c} px={3} dim={!win} />
                         <div className="fscore">
                           {inspect.edits?.[k]?.kind ?? 'start'}
-                          {s ? ` · ${s.score.toFixed(2)}` : ''}
+                          {s != null ? ` · ${s.toFixed(2)}` : ''}
                         </div>
                       </div>
                     )
@@ -256,7 +445,16 @@ export default function App() {
             )}
           </section>
         )}
+      </main>
 
+      {runState?.noise && list.some((s) => !s.kept) && (
+        <section className="treepanel">
+          <div className="treelabel">branch tree · jev's path</div>
+          <TreeDiagram noise={runState.noise} steps={list} />
+        </section>
+      )}
+
+      <main>
         {video && (
           <section className="panel">
             <h2>video · code blocks</h2>

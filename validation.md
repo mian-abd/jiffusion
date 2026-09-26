@@ -1,7 +1,52 @@
-MVP validation — September 26, 2026
-==================================
+Validation — September 26, 2026
+===============================
 
-Latest experiment: **required mutations with 16, 8, and 2 choices per call**. Each run used a 20×20 grid, 500 sequential Jev calls, prompt `a circle`, seed 0, and the same coarse binary initialization and shrinking patch schedule. The unchanged current frame is no longer a candidate. The CLI default remains 16 choices; 8 and 2 are explicit experiments.
+x₀-prediction loop (`x0-prediction-v5`, current default)
+--------------------------------------------------------
+
+Grayscale noise start; Jev scores the clean estimate and 8 candidate edits per request (Score, 4 levels), a candidate must beat the current score by 0.15 and then win a head-to-head Choice against it; runs stop after 30 (circle) / 40 (duck) steps without an accepted edit.
+
+| Prompt | Seed | Steps | Stop | Final score | Accepted | Passed Score | Vetoed by Choice | Input tokens | Wall |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| a circle | 0 | 33 | plateau | 2.67 | 1 | 3 | 2 | 118,920 | 5 s |
+| a circle | 1 | 75 | plateau | 2.57 | 5 | 5 | 0 | 315,831 | 10 s |
+| a circle | 2 | 80 | plateau | 2.31 | 11 | 21 | 10 | 334,043 | 12 s |
+| a duck (24×24) | 0 | 150 | max steps | 2.12 | 32 | 67 | 35 | 463,735 | 27 s |
+| a duck (24×24) | 1 | 150 | max steps | 2.05 | 33 | 51 | 18 | 767,050 | 26 s |
+
+Seeds 0 and 1 of `a circle` converge to a clean solid circle read out of the noise blob ([docs/v8-circle.png](docs/v8-circle.png)); seed 2 ends as an oversized blob in a corner. Both ducks are bird-like silhouettes that Jev rates "probably the subject" but not a duck ([docs/v8-duck.png](docs/v8-duck.png)). Wall time here excludes the earlier sequential experiments' overhead; each Jev request took 0.2–0.4 s.
+
+Across all runs, 40–50% of the edits that passed the Score margin were vetoed by the independent head-to-head Choice. Re-scoring the same frame varies by about ±0.15, so the Score alone would have accepted roughly twice as many edits, many of them neutral shifts. **23 offline tests pass.**
+
+Decision-consistency diagnostic (`check_decisions.py`)
+------------------------------------------------------
+
+Same 8 candidates presented in 5 shuffled orders; a content-based judge should pick the same grid each time (chance ≈ 0.12), a position-biased one the same slot.
+
+| Scenario | Grid agreement | Position agreement | Mean confidence |
+| --- | --- | --- | --- |
+| Old generator, 4×4 patches | 1.00 | 0.40 | 0.24 |
+| Old generator, 2×2 patches | 0.20 | **0.80** | 0.19 |
+| Old generator, 1-pixel flips | 0.40 | 0.40 | 0.14 |
+| Strokes, extent 12, current shown | 0.80 | 0.40 | 0.24 |
+| Strokes, extent 8, current shown | 0.80 | 0.40 | 0.16 |
+| Strokes, extent 4, current shown | 0.80 | 0.20 | 0.10 |
+| Clean circle vs corrupted copies | 1.00 | 0.20–0.60 | 0.73–0.77 |
+
+This is what motivated the design: below a ~4 px footprint Jev's choices track position, not content, and the original schedule spent 450 of 500 steps there. Showing the current frame and offering `keep` restored content-consistent decisions at every stroke size.
+
+Intermediate designs (kept as evidence)
+---------------------------------------
+
+- **Strokes + Choice with `keep`** (`primitives-v2`): 60 steps from a blank canvas produced coherent shapes for the first time, but Jev kept accepting larger ellipses until the blob filled the canvas ([docs/v2-circle-finals.png](docs/v2-circle-finals.png)). `--no-keep` and random baselines produced noise.
+- **Score gate without confirmation**: fixed over-growth (clean ellipse, 3 accepts in 60 steps) but was exploited by content-neutral shifts because of score noise.
+- **Score + head-to-head, blank-canvas start** (`primitives-v3`): clean stable ellipses ([docs/v4-circle.png](docs/v4-circle.png)); ducks were blobs with a beak-like protrusion.
+- **Forced pixel denoising from noise** (`denoise-v4`): a shrinking noise budget resolved to random blob textures that Jev then had to carve; results were worse than the blank-canvas start, which led to searching in x₀ space and blending for the viewer.
+
+Earlier experiments (original pixel-flip generator)
+---------------------------------------------------
+
+Experiment: **required mutations with 16, 8, and 2 choices per call**. Each run used a 20×20 grid, 500 sequential Jev calls, prompt `a circle`, seed 0, and the same coarse binary initialization and shrinking patch schedule. The unchanged current frame is no longer a candidate. The CLI default remains 16 choices; 8 and 2 are explicit experiments.
 
 | Choices | Steps | Wall time | Input tokens | Unchanged transitions | Selected first option |
 | --- | --- | --- | --- | --- | --- |

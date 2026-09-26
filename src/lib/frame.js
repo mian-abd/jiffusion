@@ -1,8 +1,8 @@
 // A frame is a grid of intensity levels 0..4.
 // 0 = space, 1 = ░, 2 = ▒, 3 = ▓, 4 = █
 export const LEVELS = [' ', '░', '▒', '▓', '█']
-export const W = 48
-export const H = 18
+export const W = 32
+export const H = 32
 
 export function makeFrame(w = W, h = H) {
   return { w, h, data: new Uint8Array(w * h) }
@@ -37,10 +37,11 @@ export function toAscii(f) {
   return rows.join('\n')
 }
 
+// Spaces are white pixels, so rows are kept verbatim; only a trailing newline is dropped.
 export function fromAscii(str) {
-  const rows = str.split('\n').map((r) => r.trimEnd()).filter((r) => r.length > 0)
-  if (rows.length === 0) throw new Error('Empty image block')
-  const w = rows[0].length
+  const rows = str.replace(/\n$/, '').split('\n')
+  if (rows.length === 0 || rows.every((r) => r.length === 0)) throw new Error('Empty image block')
+  const w = Math.max(...rows.map((r) => r.length))
   const f = makeFrame(w, rows.length)
   for (let y = 0; y < rows.length; y++) {
     for (let x = 0; x < rows[y].length; x++) {
