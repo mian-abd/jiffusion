@@ -1,0 +1,2 @@
+# Whitespace is part of the ASCII-art canvas.
+dataset/**/*.txt whitespace=-blank-at-eol,-blank-at-eof

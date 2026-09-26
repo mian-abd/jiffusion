@@ -1,0 +1,4780 @@
+{
+  "version": 1,
+  "size": 20,
+  "palette": ".:-=#",
+  "supersampling": 16,
+  "generator": "generate_shapes.py",
+  "provenance": "procedurally constructed geometry",
+  "records": 250,
+  "shapes": {
+    "circle": 25,
+    "square": 25,
+    "triangle": 25,
+    "rectangle": 25,
+    "ellipse": 25,
+    "diamond": 25,
+    "pentagon": 25,
+    "hexagon": 25,
+    "star": 25,
+    "cross": 25
+  },
+  "styles": {
+    "filled": 50,
+    "outline": 50,
+    "negative": 50,
+    "negative-outline": 50,
+    "hole": 50
+  },
+  "examples": [
+    {
+      "id": "013",
+      "file": "013-a-filled-black-circle-on-a-white-background.txt",
+      "prompt": "a filled black circle on a white background",
+      "shape": "circle",
+      "style": "filled",
+      "variant": {
+        "name": "large",
+        "center": [
+          10,
+          10
+        ],
+        "span": 15,
+        "stroke": 1.25
+      },
+      "family_id": "circle",
+      "variant_id": "circle-large",
+      "sha256": "b654bfcee62df7368fb06111c9c1fda87712b679b9803d7aad3d16e9634e589a"
+    },
+    {
+      "id": "014",
+      "file": "014-a-filled-black-circle-on-a-white-background.txt",
+      "prompt": "a filled black circle on a white background",
+      "shape": "circle",
+      "style": "filled",
+      "variant": {
+        "name": "small",
+        "center": [
+          10,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.0
+      },
+      "family_id": "circle",
+      "variant_id": "circle-small",
+      "sha256": "2bfa77d71405785e379d9b4483f32fd63c6caca5cdef801574102469421e316a"
+    },
+    {
+      "id": "015",
+      "file": "015-a-filled-black-circle-on-a-white-background.txt",
+      "prompt": "a filled black circle on a white background",
+      "shape": "circle",
+      "style": "filled",
+      "variant": {
+        "name": "left",
+        "center": [
+          8,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.4
+      },
+      "family_id": "circle",
+      "variant_id": "circle-left",
+      "sha256": "e8eea4861504cd44a1e7c21a79157e80a3d9b3dd27ee4ae9ab674a9aa14a47e6"
+    },
+    {
+      "id": "016",
+      "file": "016-a-filled-black-circle-on-a-white-background.txt",
+      "prompt": "a filled black circle on a white background",
+      "shape": "circle",
+      "style": "filled",
+      "variant": {
+        "name": "right",
+        "center": [
+          12,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.2
+      },
+      "family_id": "circle",
+      "variant_id": "circle-right",
+      "sha256": "5772c733bf955807f07992ac96c1ace232729d65d5ad138b0d53832e18ad1f12"
+    },
+    {
+      "id": "017",
+      "file": "017-a-filled-black-circle-on-a-white-background.txt",
+      "prompt": "a filled black circle on a white background",
+      "shape": "circle",
+      "style": "filled",
+      "variant": {
+        "name": "upper",
+        "center": [
+          10,
+          8
+        ],
+        "span": 12,
+        "stroke": 1.1
+      },
+      "family_id": "circle",
+      "variant_id": "circle-upper",
+      "sha256": "b3db83dfdec2cb64de512eea9d69e7b38133cd531134824ea43799cdb7e48e6d"
+    },
+    {
+      "id": "018",
+      "file": "018-a-black-outline-of-a-circle-on-a-white-background.txt",
+      "prompt": "a black outline of a circle on a white background",
+      "shape": "circle",
+      "style": "outline",
+      "variant": {
+        "name": "large",
+        "center": [
+          10,
+          10
+        ],
+        "span": 15,
+        "stroke": 1.25
+      },
+      "family_id": "circle",
+      "variant_id": "circle-large",
+      "sha256": "09cc6a3c7d5cb36efc0874f9f6746826871559b3ebdf6159592684d30ac5517f"
+    },
+    {
+      "id": "019",
+      "file": "019-a-black-outline-of-a-circle-on-a-white-background.txt",
+      "prompt": "a black outline of a circle on a white background",
+      "shape": "circle",
+      "style": "outline",
+      "variant": {
+        "name": "small",
+        "center": [
+          10,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.0
+      },
+      "family_id": "circle",
+      "variant_id": "circle-small",
+      "sha256": "2b139f8bfcf5333a8ddbec7eb0beedb9c150764c4e829183e0384fd4964ec7bc"
+    },
+    {
+      "id": "020",
+      "file": "020-a-black-outline-of-a-circle-on-a-white-background.txt",
+      "prompt": "a black outline of a circle on a white background",
+      "shape": "circle",
+      "style": "outline",
+      "variant": {
+        "name": "left",
+        "center": [
+          8,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.4
+      },
+      "family_id": "circle",
+      "variant_id": "circle-left",
+      "sha256": "b720d951614334b3d3ed50b1531d9b4aa1dcdc955c78ef16d14afdd7cceb22c0"
+    },
+    {
+      "id": "021",
+      "file": "021-a-black-outline-of-a-circle-on-a-white-background.txt",
+      "prompt": "a black outline of a circle on a white background",
+      "shape": "circle",
+      "style": "outline",
+      "variant": {
+        "name": "right",
+        "center": [
+          12,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.2
+      },
+      "family_id": "circle",
+      "variant_id": "circle-right",
+      "sha256": "18254c0b96c2bdab20ccd10c73b54694242f185910111e9c1d5e79e74ae2c62e"
+    },
+    {
+      "id": "022",
+      "file": "022-a-black-outline-of-a-circle-on-a-white-background.txt",
+      "prompt": "a black outline of a circle on a white background",
+      "shape": "circle",
+      "style": "outline",
+      "variant": {
+        "name": "upper",
+        "center": [
+          10,
+          8
+        ],
+        "span": 12,
+        "stroke": 1.1
+      },
+      "family_id": "circle",
+      "variant_id": "circle-upper",
+      "sha256": "1b4b83a2c85784907c645a18360873762d5f644d1b10b66ff67b3d8e11b27fa0"
+    },
+    {
+      "id": "023",
+      "file": "023-a-white-circle-cut-out-of-a-black-background.txt",
+      "prompt": "a white circle cut out of a black background",
+      "shape": "circle",
+      "style": "negative",
+      "variant": {
+        "name": "large",
+        "center": [
+          10,
+          10
+        ],
+        "span": 15,
+        "stroke": 1.25
+      },
+      "family_id": "circle",
+      "variant_id": "circle-large",
+      "sha256": "a9702b9a6f76fe0c80f230af96ff288c0f6ddb3c584b3ceee5c0922b1d7bfdd0"
+    },
+    {
+      "id": "024",
+      "file": "024-a-white-circle-cut-out-of-a-black-background.txt",
+      "prompt": "a white circle cut out of a black background",
+      "shape": "circle",
+      "style": "negative",
+      "variant": {
+        "name": "small",
+        "center": [
+          10,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.0
+      },
+      "family_id": "circle",
+      "variant_id": "circle-small",
+      "sha256": "57e5521c8fef72256b59a8c936fb059c633dcc08b391a66c222e969996c19299"
+    },
+    {
+      "id": "025",
+      "file": "025-a-white-circle-cut-out-of-a-black-background.txt",
+      "prompt": "a white circle cut out of a black background",
+      "shape": "circle",
+      "style": "negative",
+      "variant": {
+        "name": "left",
+        "center": [
+          8,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.4
+      },
+      "family_id": "circle",
+      "variant_id": "circle-left",
+      "sha256": "fb5d4acb579a069302b76892faef908e87993378eedacc8b727195cbebaa359e"
+    },
+    {
+      "id": "026",
+      "file": "026-a-white-circle-cut-out-of-a-black-background.txt",
+      "prompt": "a white circle cut out of a black background",
+      "shape": "circle",
+      "style": "negative",
+      "variant": {
+        "name": "right",
+        "center": [
+          12,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.2
+      },
+      "family_id": "circle",
+      "variant_id": "circle-right",
+      "sha256": "dbc223810404f516205131b06e13b07611a17a4bdde43b7beab86c5783532e1a"
+    },
+    {
+      "id": "027",
+      "file": "027-a-white-circle-cut-out-of-a-black-background.txt",
+      "prompt": "a white circle cut out of a black background",
+      "shape": "circle",
+      "style": "negative",
+      "variant": {
+        "name": "upper",
+        "center": [
+          10,
+          8
+        ],
+        "span": 12,
+        "stroke": 1.1
+      },
+      "family_id": "circle",
+      "variant_id": "circle-upper",
+      "sha256": "e2f26cbbc8c2b99af86526f76cc006aa88638125fa280c3db5fc5d30aa9a94a1"
+    },
+    {
+      "id": "028",
+      "file": "028-a-white-outline-of-a-circle-on-a-black-background.txt",
+      "prompt": "a white outline of a circle on a black background",
+      "shape": "circle",
+      "style": "negative-outline",
+      "variant": {
+        "name": "large",
+        "center": [
+          10,
+          10
+        ],
+        "span": 15,
+        "stroke": 1.25
+      },
+      "family_id": "circle",
+      "variant_id": "circle-large",
+      "sha256": "540f75030a48149c69fd7aa87f8a95aa447362827eaf4e0f8458dbd058dcd43c"
+    },
+    {
+      "id": "029",
+      "file": "029-a-white-outline-of-a-circle-on-a-black-background.txt",
+      "prompt": "a white outline of a circle on a black background",
+      "shape": "circle",
+      "style": "negative-outline",
+      "variant": {
+        "name": "small",
+        "center": [
+          10,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.0
+      },
+      "family_id": "circle",
+      "variant_id": "circle-small",
+      "sha256": "78cc1c716a3d76f22980b4b3808d63e74235f000e7abb0ef08d92367b525dd0d"
+    },
+    {
+      "id": "030",
+      "file": "030-a-white-outline-of-a-circle-on-a-black-background.txt",
+      "prompt": "a white outline of a circle on a black background",
+      "shape": "circle",
+      "style": "negative-outline",
+      "variant": {
+        "name": "left",
+        "center": [
+          8,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.4
+      },
+      "family_id": "circle",
+      "variant_id": "circle-left",
+      "sha256": "9977214392116f0ee9e87cda7afc4f53b107c95d97799938cfa454646c4f21f8"
+    },
+    {
+      "id": "031",
+      "file": "031-a-white-outline-of-a-circle-on-a-black-background.txt",
+      "prompt": "a white outline of a circle on a black background",
+      "shape": "circle",
+      "style": "negative-outline",
+      "variant": {
+        "name": "right",
+        "center": [
+          12,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.2
+      },
+      "family_id": "circle",
+      "variant_id": "circle-right",
+      "sha256": "e0553b753cc15ae4f19a4665f477d35e1b83e4ac25545a8441365bbebf62020a"
+    },
+    {
+      "id": "032",
+      "file": "032-a-white-outline-of-a-circle-on-a-black-background.txt",
+      "prompt": "a white outline of a circle on a black background",
+      "shape": "circle",
+      "style": "negative-outline",
+      "variant": {
+        "name": "upper",
+        "center": [
+          10,
+          8
+        ],
+        "span": 12,
+        "stroke": 1.1
+      },
+      "family_id": "circle",
+      "variant_id": "circle-upper",
+      "sha256": "b72435d08df0f300790de0362fa9252cca8892aee6c6ab6eb15e9e5c31fce25e"
+    },
+    {
+      "id": "033",
+      "file": "033-a-filled-black-circle-with-a-small-white-circular-hole-on-a-white-background.txt",
+      "prompt": "a filled black circle with a small white circular hole on a white background",
+      "shape": "circle",
+      "style": "hole",
+      "variant": {
+        "name": "large",
+        "center": [
+          10,
+          10
+        ],
+        "span": 15,
+        "stroke": 1.25
+      },
+      "family_id": "circle",
+      "variant_id": "circle-large",
+      "sha256": "7c61ec5c6e58639bdae4e97afc2edbcc36ac1335950d286d19f3753cb7caa870"
+    },
+    {
+      "id": "034",
+      "file": "034-a-filled-black-circle-with-a-small-white-circular-hole-on-a-white-background.txt",
+      "prompt": "a filled black circle with a small white circular hole on a white background",
+      "shape": "circle",
+      "style": "hole",
+      "variant": {
+        "name": "small",
+        "center": [
+          10,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.0
+      },
+      "family_id": "circle",
+      "variant_id": "circle-small",
+      "sha256": "41fd49aa1e44d5b242fb5990dc554c09947208e6cbcf1b54c9584c8d6aa684bb"
+    },
+    {
+      "id": "035",
+      "file": "035-a-filled-black-circle-with-a-small-white-circular-hole-on-a-white-background.txt",
+      "prompt": "a filled black circle with a small white circular hole on a white background",
+      "shape": "circle",
+      "style": "hole",
+      "variant": {
+        "name": "left",
+        "center": [
+          8,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.4
+      },
+      "family_id": "circle",
+      "variant_id": "circle-left",
+      "sha256": "037c77fefb0211729b75cd4f9915197e10bb5d04e1dfa3198b2a706620ab0f6f"
+    },
+    {
+      "id": "036",
+      "file": "036-a-filled-black-circle-with-a-small-white-circular-hole-on-a-white-background.txt",
+      "prompt": "a filled black circle with a small white circular hole on a white background",
+      "shape": "circle",
+      "style": "hole",
+      "variant": {
+        "name": "right",
+        "center": [
+          12,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.2
+      },
+      "family_id": "circle",
+      "variant_id": "circle-right",
+      "sha256": "7817f27c5522374fab37c4f6d254ba56613ca5eeac81b3a0a2fc1ff3615264d1"
+    },
+    {
+      "id": "037",
+      "file": "037-a-filled-black-circle-with-a-small-white-circular-hole-on-a-white-background.txt",
+      "prompt": "a filled black circle with a small white circular hole on a white background",
+      "shape": "circle",
+      "style": "hole",
+      "variant": {
+        "name": "upper",
+        "center": [
+          10,
+          8
+        ],
+        "span": 12,
+        "stroke": 1.1
+      },
+      "family_id": "circle",
+      "variant_id": "circle-upper",
+      "sha256": "d7573d65fea9a534e8d00cf63e3ef68ce2611b5ac876081f48f80e8309e314be"
+    },
+    {
+      "id": "038",
+      "file": "038-a-filled-black-square-on-a-white-background.txt",
+      "prompt": "a filled black square on a white background",
+      "shape": "square",
+      "style": "filled",
+      "variant": {
+        "name": "large",
+        "center": [
+          10,
+          10
+        ],
+        "span": 15,
+        "stroke": 1.25
+      },
+      "family_id": "square",
+      "variant_id": "square-large",
+      "sha256": "51fbab9dc7135925ecae53b32b00963936a720b58ad244ee57871375ebb545c5"
+    },
+    {
+      "id": "039",
+      "file": "039-a-filled-black-square-on-a-white-background.txt",
+      "prompt": "a filled black square on a white background",
+      "shape": "square",
+      "style": "filled",
+      "variant": {
+        "name": "small",
+        "center": [
+          10,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.0
+      },
+      "family_id": "square",
+      "variant_id": "square-small",
+      "sha256": "825abb16c040b7bcf155c4d9c5a84d1d236b13bab7296e9dd73133426169a054"
+    },
+    {
+      "id": "040",
+      "file": "040-a-filled-black-square-on-a-white-background.txt",
+      "prompt": "a filled black square on a white background",
+      "shape": "square",
+      "style": "filled",
+      "variant": {
+        "name": "left",
+        "center": [
+          8,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.4
+      },
+      "family_id": "square",
+      "variant_id": "square-left",
+      "sha256": "22a9ddacf84846d0a8f2b1a536a263b5b6d06d1490781db0d76df791c67ef279"
+    },
+    {
+      "id": "041",
+      "file": "041-a-filled-black-square-on-a-white-background.txt",
+      "prompt": "a filled black square on a white background",
+      "shape": "square",
+      "style": "filled",
+      "variant": {
+        "name": "right",
+        "center": [
+          12,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.2
+      },
+      "family_id": "square",
+      "variant_id": "square-right",
+      "sha256": "7500acaa20beade23320eb4738ab5deb1716fd21a29ceb7b445ddcd3edab1d07"
+    },
+    {
+      "id": "042",
+      "file": "042-a-filled-black-square-on-a-white-background.txt",
+      "prompt": "a filled black square on a white background",
+      "shape": "square",
+      "style": "filled",
+      "variant": {
+        "name": "upper",
+        "center": [
+          10,
+          8
+        ],
+        "span": 12,
+        "stroke": 1.1
+      },
+      "family_id": "square",
+      "variant_id": "square-upper",
+      "sha256": "cc84cf7a88135edfb314480b4996a4ed30a2c8a098b90b6f602924af525b184c"
+    },
+    {
+      "id": "043",
+      "file": "043-a-black-outline-of-a-square-on-a-white-background.txt",
+      "prompt": "a black outline of a square on a white background",
+      "shape": "square",
+      "style": "outline",
+      "variant": {
+        "name": "large",
+        "center": [
+          10,
+          10
+        ],
+        "span": 15,
+        "stroke": 1.25
+      },
+      "family_id": "square",
+      "variant_id": "square-large",
+      "sha256": "b39e44b63a37e2557a77270f0cb2b2c78b68da80878cf40413a4c2a381254333"
+    },
+    {
+      "id": "044",
+      "file": "044-a-black-outline-of-a-square-on-a-white-background.txt",
+      "prompt": "a black outline of a square on a white background",
+      "shape": "square",
+      "style": "outline",
+      "variant": {
+        "name": "small",
+        "center": [
+          10,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.0
+      },
+      "family_id": "square",
+      "variant_id": "square-small",
+      "sha256": "916739f552ea21d0f56f68302abfd94e59ee57bf73f97ae30a239eb6daf6b451"
+    },
+    {
+      "id": "045",
+      "file": "045-a-black-outline-of-a-square-on-a-white-background.txt",
+      "prompt": "a black outline of a square on a white background",
+      "shape": "square",
+      "style": "outline",
+      "variant": {
+        "name": "left",
+        "center": [
+          8,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.4
+      },
+      "family_id": "square",
+      "variant_id": "square-left",
+      "sha256": "ea41e69ca60eb649693628fbe654931468d0f39d856db64d0cddd10597e67274"
+    },
+    {
+      "id": "046",
+      "file": "046-a-black-outline-of-a-square-on-a-white-background.txt",
+      "prompt": "a black outline of a square on a white background",
+      "shape": "square",
+      "style": "outline",
+      "variant": {
+        "name": "right",
+        "center": [
+          12,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.2
+      },
+      "family_id": "square",
+      "variant_id": "square-right",
+      "sha256": "78681ae7091df6f67c3b274efd7a7dd3be13754a80b6f5042e70770005275940"
+    },
+    {
+      "id": "047",
+      "file": "047-a-black-outline-of-a-square-on-a-white-background.txt",
+      "prompt": "a black outline of a square on a white background",
+      "shape": "square",
+      "style": "outline",
+      "variant": {
+        "name": "upper",
+        "center": [
+          10,
+          8
+        ],
+        "span": 12,
+        "stroke": 1.1
+      },
+      "family_id": "square",
+      "variant_id": "square-upper",
+      "sha256": "910418c31e9374368ec19193d9e0af53daaedc00abbfddce819b76c858fc6634"
+    },
+    {
+      "id": "048",
+      "file": "048-a-white-square-cut-out-of-a-black-background.txt",
+      "prompt": "a white square cut out of a black background",
+      "shape": "square",
+      "style": "negative",
+      "variant": {
+        "name": "large",
+        "center": [
+          10,
+          10
+        ],
+        "span": 15,
+        "stroke": 1.25
+      },
+      "family_id": "square",
+      "variant_id": "square-large",
+      "sha256": "5165adcef0f80ecd0af7bf2cf84703e6210f4868097b63a8a588fa714a86a0b4"
+    },
+    {
+      "id": "049",
+      "file": "049-a-white-square-cut-out-of-a-black-background.txt",
+      "prompt": "a white square cut out of a black background",
+      "shape": "square",
+      "style": "negative",
+      "variant": {
+        "name": "small",
+        "center": [
+          10,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.0
+      },
+      "family_id": "square",
+      "variant_id": "square-small",
+      "sha256": "f357e24cdb0d5c3cec1d73c8d878a1cf84c9c1023b1271e6f5196cb9308a88af"
+    },
+    {
+      "id": "050",
+      "file": "050-a-white-square-cut-out-of-a-black-background.txt",
+      "prompt": "a white square cut out of a black background",
+      "shape": "square",
+      "style": "negative",
+      "variant": {
+        "name": "left",
+        "center": [
+          8,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.4
+      },
+      "family_id": "square",
+      "variant_id": "square-left",
+      "sha256": "cb8de8749ef2d63e27d17f21f3bc611bce3e357fcb2a7eb3172d3af5ad0f93d3"
+    },
+    {
+      "id": "051",
+      "file": "051-a-white-square-cut-out-of-a-black-background.txt",
+      "prompt": "a white square cut out of a black background",
+      "shape": "square",
+      "style": "negative",
+      "variant": {
+        "name": "right",
+        "center": [
+          12,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.2
+      },
+      "family_id": "square",
+      "variant_id": "square-right",
+      "sha256": "dd4ec7e70a4af55d1fe042fdad684096efc64e21d3a09a12168464edfe2fbbd9"
+    },
+    {
+      "id": "052",
+      "file": "052-a-white-square-cut-out-of-a-black-background.txt",
+      "prompt": "a white square cut out of a black background",
+      "shape": "square",
+      "style": "negative",
+      "variant": {
+        "name": "upper",
+        "center": [
+          10,
+          8
+        ],
+        "span": 12,
+        "stroke": 1.1
+      },
+      "family_id": "square",
+      "variant_id": "square-upper",
+      "sha256": "b246f959de04de93dd3a8216f6553de99e989560d9b46a8fd6d7d8881a6b770c"
+    },
+    {
+      "id": "053",
+      "file": "053-a-white-outline-of-a-square-on-a-black-background.txt",
+      "prompt": "a white outline of a square on a black background",
+      "shape": "square",
+      "style": "negative-outline",
+      "variant": {
+        "name": "large",
+        "center": [
+          10,
+          10
+        ],
+        "span": 15,
+        "stroke": 1.25
+      },
+      "family_id": "square",
+      "variant_id": "square-large",
+      "sha256": "c3991401e71042fb96080043e7203fe92ed60d38f9a65d5e494da7dceca7220f"
+    },
+    {
+      "id": "054",
+      "file": "054-a-white-outline-of-a-square-on-a-black-background.txt",
+      "prompt": "a white outline of a square on a black background",
+      "shape": "square",
+      "style": "negative-outline",
+      "variant": {
+        "name": "small",
+        "center": [
+          10,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.0
+      },
+      "family_id": "square",
+      "variant_id": "square-small",
+      "sha256": "52364b36232865d8d61432f983ce62884ad60a622b9d7a53cc88928d365d757e"
+    },
+    {
+      "id": "055",
+      "file": "055-a-white-outline-of-a-square-on-a-black-background.txt",
+      "prompt": "a white outline of a square on a black background",
+      "shape": "square",
+      "style": "negative-outline",
+      "variant": {
+        "name": "left",
+        "center": [
+          8,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.4
+      },
+      "family_id": "square",
+      "variant_id": "square-left",
+      "sha256": "e1a725e8fd7dff56d3c551163e436a19192411b0196a0a8c4563019b6835c2dd"
+    },
+    {
+      "id": "056",
+      "file": "056-a-white-outline-of-a-square-on-a-black-background.txt",
+      "prompt": "a white outline of a square on a black background",
+      "shape": "square",
+      "style": "negative-outline",
+      "variant": {
+        "name": "right",
+        "center": [
+          12,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.2
+      },
+      "family_id": "square",
+      "variant_id": "square-right",
+      "sha256": "f0012f252a961e226e64a7660101037877da6a2641db5dff8a7bc9ecd333ad06"
+    },
+    {
+      "id": "057",
+      "file": "057-a-white-outline-of-a-square-on-a-black-background.txt",
+      "prompt": "a white outline of a square on a black background",
+      "shape": "square",
+      "style": "negative-outline",
+      "variant": {
+        "name": "upper",
+        "center": [
+          10,
+          8
+        ],
+        "span": 12,
+        "stroke": 1.1
+      },
+      "family_id": "square",
+      "variant_id": "square-upper",
+      "sha256": "232f11eb6ca628ef317e49656e440cd4fbb13f44c8438ff2f283e4729de1000a"
+    },
+    {
+      "id": "058",
+      "file": "058-a-filled-black-square-with-a-small-white-circular-hole-on-a-white-background.txt",
+      "prompt": "a filled black square with a small white circular hole on a white background",
+      "shape": "square",
+      "style": "hole",
+      "variant": {
+        "name": "large",
+        "center": [
+          10,
+          10
+        ],
+        "span": 15,
+        "stroke": 1.25
+      },
+      "family_id": "square",
+      "variant_id": "square-large",
+      "sha256": "602431c1c13c96b5cfc09af64cae71febbe8c18ccf0ea690f928c180a8ec2464"
+    },
+    {
+      "id": "059",
+      "file": "059-a-filled-black-square-with-a-small-white-circular-hole-on-a-white-background.txt",
+      "prompt": "a filled black square with a small white circular hole on a white background",
+      "shape": "square",
+      "style": "hole",
+      "variant": {
+        "name": "small",
+        "center": [
+          10,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.0
+      },
+      "family_id": "square",
+      "variant_id": "square-small",
+      "sha256": "c3942bbb12567c1ee1a703ee1f57ae41aefbcf66436ab0d9cda42faf8a873b8d"
+    },
+    {
+      "id": "060",
+      "file": "060-a-filled-black-square-with-a-small-white-circular-hole-on-a-white-background.txt",
+      "prompt": "a filled black square with a small white circular hole on a white background",
+      "shape": "square",
+      "style": "hole",
+      "variant": {
+        "name": "left",
+        "center": [
+          8,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.4
+      },
+      "family_id": "square",
+      "variant_id": "square-left",
+      "sha256": "6dbb38f80756be686330ab49f083e1c554e1786b679ee68a0c58ced978e4cf5e"
+    },
+    {
+      "id": "061",
+      "file": "061-a-filled-black-square-with-a-small-white-circular-hole-on-a-white-background.txt",
+      "prompt": "a filled black square with a small white circular hole on a white background",
+      "shape": "square",
+      "style": "hole",
+      "variant": {
+        "name": "right",
+        "center": [
+          12,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.2
+      },
+      "family_id": "square",
+      "variant_id": "square-right",
+      "sha256": "4114ed6c7f95183bb552749d050d5e391fa2c144482d8c105166861bbc38cf71"
+    },
+    {
+      "id": "062",
+      "file": "062-a-filled-black-square-with-a-small-white-circular-hole-on-a-white-background.txt",
+      "prompt": "a filled black square with a small white circular hole on a white background",
+      "shape": "square",
+      "style": "hole",
+      "variant": {
+        "name": "upper",
+        "center": [
+          10,
+          8
+        ],
+        "span": 12,
+        "stroke": 1.1
+      },
+      "family_id": "square",
+      "variant_id": "square-upper",
+      "sha256": "0a665613158b8bd917c5f4e09bd6633ec0a14489eea0433cb0142a93cf42f7c0"
+    },
+    {
+      "id": "063",
+      "file": "063-a-filled-black-triangle-on-a-white-background.txt",
+      "prompt": "a filled black triangle on a white background",
+      "shape": "triangle",
+      "style": "filled",
+      "variant": {
+        "name": "large",
+        "center": [
+          10,
+          10
+        ],
+        "span": 15,
+        "stroke": 1.25
+      },
+      "family_id": "triangle",
+      "variant_id": "triangle-large",
+      "sha256": "2ee9ee68519bf7bc2616b1675e429b99aa25bab3aba8d3c2888d3c63e18b48c9"
+    },
+    {
+      "id": "064",
+      "file": "064-a-filled-black-triangle-on-a-white-background.txt",
+      "prompt": "a filled black triangle on a white background",
+      "shape": "triangle",
+      "style": "filled",
+      "variant": {
+        "name": "small",
+        "center": [
+          10,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.0
+      },
+      "family_id": "triangle",
+      "variant_id": "triangle-small",
+      "sha256": "f1e7c3f49588fec89f0bceac409e7f49da4984323a6517add8f53ab877b9f010"
+    },
+    {
+      "id": "065",
+      "file": "065-a-filled-black-triangle-on-a-white-background.txt",
+      "prompt": "a filled black triangle on a white background",
+      "shape": "triangle",
+      "style": "filled",
+      "variant": {
+        "name": "left",
+        "center": [
+          8,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.4
+      },
+      "family_id": "triangle",
+      "variant_id": "triangle-left",
+      "sha256": "84609281e98b61fb2c489f0a1a16b8990fd531ce75fb8fde4b0b28a6daf5cd83"
+    },
+    {
+      "id": "066",
+      "file": "066-a-filled-black-triangle-on-a-white-background.txt",
+      "prompt": "a filled black triangle on a white background",
+      "shape": "triangle",
+      "style": "filled",
+      "variant": {
+        "name": "right",
+        "center": [
+          12,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.2
+      },
+      "family_id": "triangle",
+      "variant_id": "triangle-right",
+      "sha256": "bc2d47704526f52ca25c6693af62432cdb7111a5bcc51e36b00d4beb22568419"
+    },
+    {
+      "id": "067",
+      "file": "067-a-filled-black-triangle-on-a-white-background.txt",
+      "prompt": "a filled black triangle on a white background",
+      "shape": "triangle",
+      "style": "filled",
+      "variant": {
+        "name": "upper",
+        "center": [
+          10,
+          8
+        ],
+        "span": 12,
+        "stroke": 1.1
+      },
+      "family_id": "triangle",
+      "variant_id": "triangle-upper",
+      "sha256": "58e624a15e7daf3385dc8f212738073927e6f06bdab0a1dcff9aede815d42c40"
+    },
+    {
+      "id": "068",
+      "file": "068-a-black-outline-of-a-triangle-on-a-white-background.txt",
+      "prompt": "a black outline of a triangle on a white background",
+      "shape": "triangle",
+      "style": "outline",
+      "variant": {
+        "name": "large",
+        "center": [
+          10,
+          10
+        ],
+        "span": 15,
+        "stroke": 1.25
+      },
+      "family_id": "triangle",
+      "variant_id": "triangle-large",
+      "sha256": "c1a5d5df5c5563f0235bef139600f9fd5bb1cf33370a6a42a08a113e59aa8281"
+    },
+    {
+      "id": "069",
+      "file": "069-a-black-outline-of-a-triangle-on-a-white-background.txt",
+      "prompt": "a black outline of a triangle on a white background",
+      "shape": "triangle",
+      "style": "outline",
+      "variant": {
+        "name": "small",
+        "center": [
+          10,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.0
+      },
+      "family_id": "triangle",
+      "variant_id": "triangle-small",
+      "sha256": "661a7b83637e09cf1c88d0a112783f36e5513122612e39b6a9d41ec1ece394dd"
+    },
+    {
+      "id": "070",
+      "file": "070-a-black-outline-of-a-triangle-on-a-white-background.txt",
+      "prompt": "a black outline of a triangle on a white background",
+      "shape": "triangle",
+      "style": "outline",
+      "variant": {
+        "name": "left",
+        "center": [
+          8,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.4
+      },
+      "family_id": "triangle",
+      "variant_id": "triangle-left",
+      "sha256": "e0b1a062acb91918153288c6154e7c871b14445b7c7b19b30ca24534185d008c"
+    },
+    {
+      "id": "071",
+      "file": "071-a-black-outline-of-a-triangle-on-a-white-background.txt",
+      "prompt": "a black outline of a triangle on a white background",
+      "shape": "triangle",
+      "style": "outline",
+      "variant": {
+        "name": "right",
+        "center": [
+          12,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.2
+      },
+      "family_id": "triangle",
+      "variant_id": "triangle-right",
+      "sha256": "afc0f2a03ddd3d4f38c0253160cb5ef87ee4e47d5461a1cd399fe7854d31f74f"
+    },
+    {
+      "id": "072",
+      "file": "072-a-black-outline-of-a-triangle-on-a-white-background.txt",
+      "prompt": "a black outline of a triangle on a white background",
+      "shape": "triangle",
+      "style": "outline",
+      "variant": {
+        "name": "upper",
+        "center": [
+          10,
+          8
+        ],
+        "span": 12,
+        "stroke": 1.1
+      },
+      "family_id": "triangle",
+      "variant_id": "triangle-upper",
+      "sha256": "8fd9881384f98e90ee67c6666c173fe8d786c4f4326240f8c63d5d992fca6680"
+    },
+    {
+      "id": "073",
+      "file": "073-a-white-triangle-cut-out-of-a-black-background.txt",
+      "prompt": "a white triangle cut out of a black background",
+      "shape": "triangle",
+      "style": "negative",
+      "variant": {
+        "name": "large",
+        "center": [
+          10,
+          10
+        ],
+        "span": 15,
+        "stroke": 1.25
+      },
+      "family_id": "triangle",
+      "variant_id": "triangle-large",
+      "sha256": "0d891e6ee548d2e54ae0d451b6f0376fbdab31bcd617f79e309238ef93599cf1"
+    },
+    {
+      "id": "074",
+      "file": "074-a-white-triangle-cut-out-of-a-black-background.txt",
+      "prompt": "a white triangle cut out of a black background",
+      "shape": "triangle",
+      "style": "negative",
+      "variant": {
+        "name": "small",
+        "center": [
+          10,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.0
+      },
+      "family_id": "triangle",
+      "variant_id": "triangle-small",
+      "sha256": "b0a5b904d44b861a50554bf8b8423f3f215fc77164febecf97e47c43a19bbd2d"
+    },
+    {
+      "id": "075",
+      "file": "075-a-white-triangle-cut-out-of-a-black-background.txt",
+      "prompt": "a white triangle cut out of a black background",
+      "shape": "triangle",
+      "style": "negative",
+      "variant": {
+        "name": "left",
+        "center": [
+          8,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.4
+      },
+      "family_id": "triangle",
+      "variant_id": "triangle-left",
+      "sha256": "5f3db49305829da87dea59e7f1cd882ac5f4aa4712bbc32d7e7ba17a0f2c6ff1"
+    },
+    {
+      "id": "076",
+      "file": "076-a-white-triangle-cut-out-of-a-black-background.txt",
+      "prompt": "a white triangle cut out of a black background",
+      "shape": "triangle",
+      "style": "negative",
+      "variant": {
+        "name": "right",
+        "center": [
+          12,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.2
+      },
+      "family_id": "triangle",
+      "variant_id": "triangle-right",
+      "sha256": "0b8cc9a1b2ec00fcf8a6ca9c5f0b3e26bda1f363dec9374b80a5d96609826401"
+    },
+    {
+      "id": "077",
+      "file": "077-a-white-triangle-cut-out-of-a-black-background.txt",
+      "prompt": "a white triangle cut out of a black background",
+      "shape": "triangle",
+      "style": "negative",
+      "variant": {
+        "name": "upper",
+        "center": [
+          10,
+          8
+        ],
+        "span": 12,
+        "stroke": 1.1
+      },
+      "family_id": "triangle",
+      "variant_id": "triangle-upper",
+      "sha256": "f76ce2e582214f796c01e36e8c796982c6246c4178c3f74d2f73359687615357"
+    },
+    {
+      "id": "078",
+      "file": "078-a-white-outline-of-a-triangle-on-a-black-background.txt",
+      "prompt": "a white outline of a triangle on a black background",
+      "shape": "triangle",
+      "style": "negative-outline",
+      "variant": {
+        "name": "large",
+        "center": [
+          10,
+          10
+        ],
+        "span": 15,
+        "stroke": 1.25
+      },
+      "family_id": "triangle",
+      "variant_id": "triangle-large",
+      "sha256": "bb8d2069f68ac86c4af49ea80c1b73d70dbacf89b8e15606ef8a571e3f9fab45"
+    },
+    {
+      "id": "079",
+      "file": "079-a-white-outline-of-a-triangle-on-a-black-background.txt",
+      "prompt": "a white outline of a triangle on a black background",
+      "shape": "triangle",
+      "style": "negative-outline",
+      "variant": {
+        "name": "small",
+        "center": [
+          10,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.0
+      },
+      "family_id": "triangle",
+      "variant_id": "triangle-small",
+      "sha256": "128c2187f77e347b1863a58ca11d2989e9da621beb489e32cc0b70a2e2408a42"
+    },
+    {
+      "id": "080",
+      "file": "080-a-white-outline-of-a-triangle-on-a-black-background.txt",
+      "prompt": "a white outline of a triangle on a black background",
+      "shape": "triangle",
+      "style": "negative-outline",
+      "variant": {
+        "name": "left",
+        "center": [
+          8,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.4
+      },
+      "family_id": "triangle",
+      "variant_id": "triangle-left",
+      "sha256": "4ec0773b1f6f95fe71de33a622097ea8d7b29df9fd343d80d98d63ec5812c8e8"
+    },
+    {
+      "id": "081",
+      "file": "081-a-white-outline-of-a-triangle-on-a-black-background.txt",
+      "prompt": "a white outline of a triangle on a black background",
+      "shape": "triangle",
+      "style": "negative-outline",
+      "variant": {
+        "name": "right",
+        "center": [
+          12,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.2
+      },
+      "family_id": "triangle",
+      "variant_id": "triangle-right",
+      "sha256": "9fcecbc3bdf7915366878e5457352d9577066103cba7a94aa945cf8180cd57d7"
+    },
+    {
+      "id": "082",
+      "file": "082-a-white-outline-of-a-triangle-on-a-black-background.txt",
+      "prompt": "a white outline of a triangle on a black background",
+      "shape": "triangle",
+      "style": "negative-outline",
+      "variant": {
+        "name": "upper",
+        "center": [
+          10,
+          8
+        ],
+        "span": 12,
+        "stroke": 1.1
+      },
+      "family_id": "triangle",
+      "variant_id": "triangle-upper",
+      "sha256": "ad145afaac049c7ae49175eac7ac41fa2e9251b0d7302511a443a0eb3d589e14"
+    },
+    {
+      "id": "083",
+      "file": "083-a-filled-black-triangle-with-a-small-white-circular-hole-on-a-white-background.txt",
+      "prompt": "a filled black triangle with a small white circular hole on a white background",
+      "shape": "triangle",
+      "style": "hole",
+      "variant": {
+        "name": "large",
+        "center": [
+          10,
+          10
+        ],
+        "span": 15,
+        "stroke": 1.25
+      },
+      "family_id": "triangle",
+      "variant_id": "triangle-large",
+      "sha256": "893ff518113c443358d81205df265a36ca27e286b70f3118a27456442d2b096b"
+    },
+    {
+      "id": "084",
+      "file": "084-a-filled-black-triangle-with-a-small-white-circular-hole-on-a-white-background.txt",
+      "prompt": "a filled black triangle with a small white circular hole on a white background",
+      "shape": "triangle",
+      "style": "hole",
+      "variant": {
+        "name": "small",
+        "center": [
+          10,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.0
+      },
+      "family_id": "triangle",
+      "variant_id": "triangle-small",
+      "sha256": "2512cfcc1932455b3b2e70a714b6aaac67818002a8592d0b9db7117bda66b4dd"
+    },
+    {
+      "id": "085",
+      "file": "085-a-filled-black-triangle-with-a-small-white-circular-hole-on-a-white-background.txt",
+      "prompt": "a filled black triangle with a small white circular hole on a white background",
+      "shape": "triangle",
+      "style": "hole",
+      "variant": {
+        "name": "left",
+        "center": [
+          8,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.4
+      },
+      "family_id": "triangle",
+      "variant_id": "triangle-left",
+      "sha256": "a46bd12cdb1256fe9bf6404ecd58f69cfc24bd90e256215ea1e69cb341bd6713"
+    },
+    {
+      "id": "086",
+      "file": "086-a-filled-black-triangle-with-a-small-white-circular-hole-on-a-white-background.txt",
+      "prompt": "a filled black triangle with a small white circular hole on a white background",
+      "shape": "triangle",
+      "style": "hole",
+      "variant": {
+        "name": "right",
+        "center": [
+          12,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.2
+      },
+      "family_id": "triangle",
+      "variant_id": "triangle-right",
+      "sha256": "2adca46748bee1900632294c57a7004d28879f5f43bebdfa8729881e48c820d1"
+    },
+    {
+      "id": "087",
+      "file": "087-a-filled-black-triangle-with-a-small-white-circular-hole-on-a-white-background.txt",
+      "prompt": "a filled black triangle with a small white circular hole on a white background",
+      "shape": "triangle",
+      "style": "hole",
+      "variant": {
+        "name": "upper",
+        "center": [
+          10,
+          8
+        ],
+        "span": 12,
+        "stroke": 1.1
+      },
+      "family_id": "triangle",
+      "variant_id": "triangle-upper",
+      "sha256": "bf0233cc5aa0022845d213bb5a856c221f177b5ed567670eeda52f09facdb262"
+    },
+    {
+      "id": "088",
+      "file": "088-a-filled-black-rectangle-on-a-white-background.txt",
+      "prompt": "a filled black rectangle on a white background",
+      "shape": "rectangle",
+      "style": "filled",
+      "variant": {
+        "name": "large",
+        "center": [
+          10,
+          10
+        ],
+        "span": 15,
+        "stroke": 1.25
+      },
+      "family_id": "rectangle",
+      "variant_id": "rectangle-large",
+      "sha256": "8fb5052feff869312921807dde0fda3910c98d582f687ed2fe8817c7c5cbfe93"
+    },
+    {
+      "id": "089",
+      "file": "089-a-filled-black-rectangle-on-a-white-background.txt",
+      "prompt": "a filled black rectangle on a white background",
+      "shape": "rectangle",
+      "style": "filled",
+      "variant": {
+        "name": "small",
+        "center": [
+          10,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.0
+      },
+      "family_id": "rectangle",
+      "variant_id": "rectangle-small",
+      "sha256": "ab19c80633107a8bf419de6968fca33fa4023d7fe62a08b80e0e6ec7d4b4152a"
+    },
+    {
+      "id": "090",
+      "file": "090-a-filled-black-rectangle-on-a-white-background.txt",
+      "prompt": "a filled black rectangle on a white background",
+      "shape": "rectangle",
+      "style": "filled",
+      "variant": {
+        "name": "left",
+        "center": [
+          8,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.4
+      },
+      "family_id": "rectangle",
+      "variant_id": "rectangle-left",
+      "sha256": "2e7062d0b60b714d80ee10bf26c80525da267c08fff7ab8e97d2f4fe6db7e536"
+    },
+    {
+      "id": "091",
+      "file": "091-a-filled-black-rectangle-on-a-white-background.txt",
+      "prompt": "a filled black rectangle on a white background",
+      "shape": "rectangle",
+      "style": "filled",
+      "variant": {
+        "name": "right",
+        "center": [
+          12,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.2
+      },
+      "family_id": "rectangle",
+      "variant_id": "rectangle-right",
+      "sha256": "db44bf0506cc736e5388bfbad9a191d3d01bb42bbd43b0e9ac1796582ac440b4"
+    },
+    {
+      "id": "092",
+      "file": "092-a-filled-black-rectangle-on-a-white-background.txt",
+      "prompt": "a filled black rectangle on a white background",
+      "shape": "rectangle",
+      "style": "filled",
+      "variant": {
+        "name": "upper",
+        "center": [
+          10,
+          8
+        ],
+        "span": 12,
+        "stroke": 1.1
+      },
+      "family_id": "rectangle",
+      "variant_id": "rectangle-upper",
+      "sha256": "41b3f27cd261efe51d201d1d574132b22c3b126541a7c62661dd6bad5f7dc6bd"
+    },
+    {
+      "id": "093",
+      "file": "093-a-black-outline-of-a-rectangle-on-a-white-background.txt",
+      "prompt": "a black outline of a rectangle on a white background",
+      "shape": "rectangle",
+      "style": "outline",
+      "variant": {
+        "name": "large",
+        "center": [
+          10,
+          10
+        ],
+        "span": 15,
+        "stroke": 1.25
+      },
+      "family_id": "rectangle",
+      "variant_id": "rectangle-large",
+      "sha256": "4077e8996cb7c48554288ac1f0e6e6fa31f00162d8a44127b9731cda29c4a640"
+    },
+    {
+      "id": "094",
+      "file": "094-a-black-outline-of-a-rectangle-on-a-white-background.txt",
+      "prompt": "a black outline of a rectangle on a white background",
+      "shape": "rectangle",
+      "style": "outline",
+      "variant": {
+        "name": "small",
+        "center": [
+          10,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.0
+      },
+      "family_id": "rectangle",
+      "variant_id": "rectangle-small",
+      "sha256": "d60f2ca66af23c83be499624676967b37a19a5da0c2570fe62430cc357457b5a"
+    },
+    {
+      "id": "095",
+      "file": "095-a-black-outline-of-a-rectangle-on-a-white-background.txt",
+      "prompt": "a black outline of a rectangle on a white background",
+      "shape": "rectangle",
+      "style": "outline",
+      "variant": {
+        "name": "left",
+        "center": [
+          8,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.4
+      },
+      "family_id": "rectangle",
+      "variant_id": "rectangle-left",
+      "sha256": "fc4b62da025cddfc85529956eeb4f41d1fc73f0a208c3ead8da2fea445b15bf1"
+    },
+    {
+      "id": "096",
+      "file": "096-a-black-outline-of-a-rectangle-on-a-white-background.txt",
+      "prompt": "a black outline of a rectangle on a white background",
+      "shape": "rectangle",
+      "style": "outline",
+      "variant": {
+        "name": "right",
+        "center": [
+          12,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.2
+      },
+      "family_id": "rectangle",
+      "variant_id": "rectangle-right",
+      "sha256": "8293be6390e07b70cc5a4c1d476196bb9ac2ee82472fef09400e5da6c9c55171"
+    },
+    {
+      "id": "097",
+      "file": "097-a-black-outline-of-a-rectangle-on-a-white-background.txt",
+      "prompt": "a black outline of a rectangle on a white background",
+      "shape": "rectangle",
+      "style": "outline",
+      "variant": {
+        "name": "upper",
+        "center": [
+          10,
+          8
+        ],
+        "span": 12,
+        "stroke": 1.1
+      },
+      "family_id": "rectangle",
+      "variant_id": "rectangle-upper",
+      "sha256": "82c6c5a98f08a1ad7508d73aabb0e089fa1a9d72f1659586124f06f66606d091"
+    },
+    {
+      "id": "098",
+      "file": "098-a-white-rectangle-cut-out-of-a-black-background.txt",
+      "prompt": "a white rectangle cut out of a black background",
+      "shape": "rectangle",
+      "style": "negative",
+      "variant": {
+        "name": "large",
+        "center": [
+          10,
+          10
+        ],
+        "span": 15,
+        "stroke": 1.25
+      },
+      "family_id": "rectangle",
+      "variant_id": "rectangle-large",
+      "sha256": "47684a1ea422531eae8f7fa9bcd4fdbd233c42ad886f440473a6f32d0a67eac3"
+    },
+    {
+      "id": "099",
+      "file": "099-a-white-rectangle-cut-out-of-a-black-background.txt",
+      "prompt": "a white rectangle cut out of a black background",
+      "shape": "rectangle",
+      "style": "negative",
+      "variant": {
+        "name": "small",
+        "center": [
+          10,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.0
+      },
+      "family_id": "rectangle",
+      "variant_id": "rectangle-small",
+      "sha256": "b4dbe95fb09d92df1e56ef27a45ad2d6a0099af79793663b516597382f721867"
+    },
+    {
+      "id": "100",
+      "file": "100-a-white-rectangle-cut-out-of-a-black-background.txt",
+      "prompt": "a white rectangle cut out of a black background",
+      "shape": "rectangle",
+      "style": "negative",
+      "variant": {
+        "name": "left",
+        "center": [
+          8,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.4
+      },
+      "family_id": "rectangle",
+      "variant_id": "rectangle-left",
+      "sha256": "97f6766700193867ebb619d033514a130e91499478a5acc933003bcd7141a66b"
+    },
+    {
+      "id": "101",
+      "file": "101-a-white-rectangle-cut-out-of-a-black-background.txt",
+      "prompt": "a white rectangle cut out of a black background",
+      "shape": "rectangle",
+      "style": "negative",
+      "variant": {
+        "name": "right",
+        "center": [
+          12,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.2
+      },
+      "family_id": "rectangle",
+      "variant_id": "rectangle-right",
+      "sha256": "a8d9b000729a4d3fd9f04767af0c360b335f075a58350c728fa983bca806e3bd"
+    },
+    {
+      "id": "102",
+      "file": "102-a-white-rectangle-cut-out-of-a-black-background.txt",
+      "prompt": "a white rectangle cut out of a black background",
+      "shape": "rectangle",
+      "style": "negative",
+      "variant": {
+        "name": "upper",
+        "center": [
+          10,
+          8
+        ],
+        "span": 12,
+        "stroke": 1.1
+      },
+      "family_id": "rectangle",
+      "variant_id": "rectangle-upper",
+      "sha256": "5b2e0a844e198ad51c7dee6b9aaccf42f85bdbfc0eefc6a8bc5860acdf14ea64"
+    },
+    {
+      "id": "103",
+      "file": "103-a-white-outline-of-a-rectangle-on-a-black-background.txt",
+      "prompt": "a white outline of a rectangle on a black background",
+      "shape": "rectangle",
+      "style": "negative-outline",
+      "variant": {
+        "name": "large",
+        "center": [
+          10,
+          10
+        ],
+        "span": 15,
+        "stroke": 1.25
+      },
+      "family_id": "rectangle",
+      "variant_id": "rectangle-large",
+      "sha256": "fe9d4361300e2bcf31477e2eb054ae77116602e5fcc241962b3dbfeeb06e8bc0"
+    },
+    {
+      "id": "104",
+      "file": "104-a-white-outline-of-a-rectangle-on-a-black-background.txt",
+      "prompt": "a white outline of a rectangle on a black background",
+      "shape": "rectangle",
+      "style": "negative-outline",
+      "variant": {
+        "name": "small",
+        "center": [
+          10,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.0
+      },
+      "family_id": "rectangle",
+      "variant_id": "rectangle-small",
+      "sha256": "b26a9a56b48e69c5d1cbcbb721c279578dc9961e3c4c1bbb4cf0ede924da5127"
+    },
+    {
+      "id": "105",
+      "file": "105-a-white-outline-of-a-rectangle-on-a-black-background.txt",
+      "prompt": "a white outline of a rectangle on a black background",
+      "shape": "rectangle",
+      "style": "negative-outline",
+      "variant": {
+        "name": "left",
+        "center": [
+          8,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.4
+      },
+      "family_id": "rectangle",
+      "variant_id": "rectangle-left",
+      "sha256": "37c252fd756e2ca9d03d6570c214273144b790dcb55f5b3dc5bc6f5b05a04622"
+    },
+    {
+      "id": "106",
+      "file": "106-a-white-outline-of-a-rectangle-on-a-black-background.txt",
+      "prompt": "a white outline of a rectangle on a black background",
+      "shape": "rectangle",
+      "style": "negative-outline",
+      "variant": {
+        "name": "right",
+        "center": [
+          12,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.2
+      },
+      "family_id": "rectangle",
+      "variant_id": "rectangle-right",
+      "sha256": "1f9956c854c62c4ab130d2bfa0f5fce810ecbd5c37a8bce8b33ec7bb9e41c08a"
+    },
+    {
+      "id": "107",
+      "file": "107-a-white-outline-of-a-rectangle-on-a-black-background.txt",
+      "prompt": "a white outline of a rectangle on a black background",
+      "shape": "rectangle",
+      "style": "negative-outline",
+      "variant": {
+        "name": "upper",
+        "center": [
+          10,
+          8
+        ],
+        "span": 12,
+        "stroke": 1.1
+      },
+      "family_id": "rectangle",
+      "variant_id": "rectangle-upper",
+      "sha256": "9aebbcb6c8f30af3795e47bd982caed840da3c6582b5487510e725ad8f0344db"
+    },
+    {
+      "id": "108",
+      "file": "108-a-filled-black-rectangle-with-a-small-white-circular-hole-on-a-white-background.txt",
+      "prompt": "a filled black rectangle with a small white circular hole on a white background",
+      "shape": "rectangle",
+      "style": "hole",
+      "variant": {
+        "name": "large",
+        "center": [
+          10,
+          10
+        ],
+        "span": 15,
+        "stroke": 1.25
+      },
+      "family_id": "rectangle",
+      "variant_id": "rectangle-large",
+      "sha256": "4f53bbb16439d8736778b0f1c8882475c9f88e71cd92f19d41ef46f6807c571a"
+    },
+    {
+      "id": "109",
+      "file": "109-a-filled-black-rectangle-with-a-small-white-circular-hole-on-a-white-background.txt",
+      "prompt": "a filled black rectangle with a small white circular hole on a white background",
+      "shape": "rectangle",
+      "style": "hole",
+      "variant": {
+        "name": "small",
+        "center": [
+          10,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.0
+      },
+      "family_id": "rectangle",
+      "variant_id": "rectangle-small",
+      "sha256": "783b7dfee76a55aa0735318ba6e8e3c9d0d5bfc7e097b487041eb0cd0afa1bb4"
+    },
+    {
+      "id": "110",
+      "file": "110-a-filled-black-rectangle-with-a-small-white-circular-hole-on-a-white-background.txt",
+      "prompt": "a filled black rectangle with a small white circular hole on a white background",
+      "shape": "rectangle",
+      "style": "hole",
+      "variant": {
+        "name": "left",
+        "center": [
+          8,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.4
+      },
+      "family_id": "rectangle",
+      "variant_id": "rectangle-left",
+      "sha256": "136d5976853cc504c81f6698301120f7102a18937752b854e9d51394934e18a9"
+    },
+    {
+      "id": "111",
+      "file": "111-a-filled-black-rectangle-with-a-small-white-circular-hole-on-a-white-background.txt",
+      "prompt": "a filled black rectangle with a small white circular hole on a white background",
+      "shape": "rectangle",
+      "style": "hole",
+      "variant": {
+        "name": "right",
+        "center": [
+          12,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.2
+      },
+      "family_id": "rectangle",
+      "variant_id": "rectangle-right",
+      "sha256": "f88071ca16d5a4d944812c7400cb4c67d3105a6022ee920fccb49d9a8ea3251c"
+    },
+    {
+      "id": "112",
+      "file": "112-a-filled-black-rectangle-with-a-small-white-circular-hole-on-a-white-background.txt",
+      "prompt": "a filled black rectangle with a small white circular hole on a white background",
+      "shape": "rectangle",
+      "style": "hole",
+      "variant": {
+        "name": "upper",
+        "center": [
+          10,
+          8
+        ],
+        "span": 12,
+        "stroke": 1.1
+      },
+      "family_id": "rectangle",
+      "variant_id": "rectangle-upper",
+      "sha256": "0a41e720482a0cb397d60b7060cdd1a05efe0e51ae0103202c175212f21cb816"
+    },
+    {
+      "id": "113",
+      "file": "113-a-filled-black-ellipse-on-a-white-background.txt",
+      "prompt": "a filled black ellipse on a white background",
+      "shape": "ellipse",
+      "style": "filled",
+      "variant": {
+        "name": "large",
+        "center": [
+          10,
+          10
+        ],
+        "span": 15,
+        "stroke": 1.25
+      },
+      "family_id": "ellipse",
+      "variant_id": "ellipse-large",
+      "sha256": "e01bd41e449dec1a5bc65c1489892f6ef906fb9ef1b9fe2fe1db2e56b12ff85a"
+    },
+    {
+      "id": "114",
+      "file": "114-a-filled-black-ellipse-on-a-white-background.txt",
+      "prompt": "a filled black ellipse on a white background",
+      "shape": "ellipse",
+      "style": "filled",
+      "variant": {
+        "name": "small",
+        "center": [
+          10,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.0
+      },
+      "family_id": "ellipse",
+      "variant_id": "ellipse-small",
+      "sha256": "f5a0864f1b629710b0a1610857425be7b4f907b92aa9b84bef3762b18e1e02f1"
+    },
+    {
+      "id": "115",
+      "file": "115-a-filled-black-ellipse-on-a-white-background.txt",
+      "prompt": "a filled black ellipse on a white background",
+      "shape": "ellipse",
+      "style": "filled",
+      "variant": {
+        "name": "left",
+        "center": [
+          8,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.4
+      },
+      "family_id": "ellipse",
+      "variant_id": "ellipse-left",
+      "sha256": "3f0fd7598fe18ae3f04923fbe9319b37a0e81359af2236c9a540eb3d674e06dc"
+    },
+    {
+      "id": "116",
+      "file": "116-a-filled-black-ellipse-on-a-white-background.txt",
+      "prompt": "a filled black ellipse on a white background",
+      "shape": "ellipse",
+      "style": "filled",
+      "variant": {
+        "name": "right",
+        "center": [
+          12,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.2
+      },
+      "family_id": "ellipse",
+      "variant_id": "ellipse-right",
+      "sha256": "66c97c315b97800255610ca641a3597f6c87282a427f5556bc76c11c7ab8b3e8"
+    },
+    {
+      "id": "117",
+      "file": "117-a-filled-black-ellipse-on-a-white-background.txt",
+      "prompt": "a filled black ellipse on a white background",
+      "shape": "ellipse",
+      "style": "filled",
+      "variant": {
+        "name": "upper",
+        "center": [
+          10,
+          8
+        ],
+        "span": 12,
+        "stroke": 1.1
+      },
+      "family_id": "ellipse",
+      "variant_id": "ellipse-upper",
+      "sha256": "56265f0f6d6696dd4b44675e87fc62a6a136fa8d1ae96d6c3458160a939ae3e9"
+    },
+    {
+      "id": "118",
+      "file": "118-a-black-outline-of-an-ellipse-on-a-white-background.txt",
+      "prompt": "a black outline of an ellipse on a white background",
+      "shape": "ellipse",
+      "style": "outline",
+      "variant": {
+        "name": "large",
+        "center": [
+          10,
+          10
+        ],
+        "span": 15,
+        "stroke": 1.25
+      },
+      "family_id": "ellipse",
+      "variant_id": "ellipse-large",
+      "sha256": "358d0e0d3a832db22af849e8535f8dc19bc53dd9061a4a5b1f2fd9443a253156"
+    },
+    {
+      "id": "119",
+      "file": "119-a-black-outline-of-an-ellipse-on-a-white-background.txt",
+      "prompt": "a black outline of an ellipse on a white background",
+      "shape": "ellipse",
+      "style": "outline",
+      "variant": {
+        "name": "small",
+        "center": [
+          10,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.0
+      },
+      "family_id": "ellipse",
+      "variant_id": "ellipse-small",
+      "sha256": "4cef892c80b3dcaa36aa117e2d83e33266dab4dca3e417f33f2f47326f69484a"
+    },
+    {
+      "id": "120",
+      "file": "120-a-black-outline-of-an-ellipse-on-a-white-background.txt",
+      "prompt": "a black outline of an ellipse on a white background",
+      "shape": "ellipse",
+      "style": "outline",
+      "variant": {
+        "name": "left",
+        "center": [
+          8,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.4
+      },
+      "family_id": "ellipse",
+      "variant_id": "ellipse-left",
+      "sha256": "2224da0e90e63902744432a90f1c743c2057c75c2b036d9fb9b29104235b048d"
+    },
+    {
+      "id": "121",
+      "file": "121-a-black-outline-of-an-ellipse-on-a-white-background.txt",
+      "prompt": "a black outline of an ellipse on a white background",
+      "shape": "ellipse",
+      "style": "outline",
+      "variant": {
+        "name": "right",
+        "center": [
+          12,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.2
+      },
+      "family_id": "ellipse",
+      "variant_id": "ellipse-right",
+      "sha256": "59421034259c00a46da5a9219e9b2c76f4949626b7822f43d905b15ae1169221"
+    },
+    {
+      "id": "122",
+      "file": "122-a-black-outline-of-an-ellipse-on-a-white-background.txt",
+      "prompt": "a black outline of an ellipse on a white background",
+      "shape": "ellipse",
+      "style": "outline",
+      "variant": {
+        "name": "upper",
+        "center": [
+          10,
+          8
+        ],
+        "span": 12,
+        "stroke": 1.1
+      },
+      "family_id": "ellipse",
+      "variant_id": "ellipse-upper",
+      "sha256": "19bffc24edf18a5306b4f5b62fbb2700b1f776738860fe14e1ed91a3668e6416"
+    },
+    {
+      "id": "123",
+      "file": "123-a-white-ellipse-cut-out-of-a-black-background.txt",
+      "prompt": "a white ellipse cut out of a black background",
+      "shape": "ellipse",
+      "style": "negative",
+      "variant": {
+        "name": "large",
+        "center": [
+          10,
+          10
+        ],
+        "span": 15,
+        "stroke": 1.25
+      },
+      "family_id": "ellipse",
+      "variant_id": "ellipse-large",
+      "sha256": "32c6d165e81cfc096952e73013de8ab79374736d01268db8c65a17a04eb0fe98"
+    },
+    {
+      "id": "124",
+      "file": "124-a-white-ellipse-cut-out-of-a-black-background.txt",
+      "prompt": "a white ellipse cut out of a black background",
+      "shape": "ellipse",
+      "style": "negative",
+      "variant": {
+        "name": "small",
+        "center": [
+          10,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.0
+      },
+      "family_id": "ellipse",
+      "variant_id": "ellipse-small",
+      "sha256": "c783931d8ae077438df30f52bda995aa5aafe0389b1e17620bbcec3460b2e114"
+    },
+    {
+      "id": "125",
+      "file": "125-a-white-ellipse-cut-out-of-a-black-background.txt",
+      "prompt": "a white ellipse cut out of a black background",
+      "shape": "ellipse",
+      "style": "negative",
+      "variant": {
+        "name": "left",
+        "center": [
+          8,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.4
+      },
+      "family_id": "ellipse",
+      "variant_id": "ellipse-left",
+      "sha256": "6586d58a9fb2b3c49c1c6840c078d01ada5ef2a40a4c6cc71ab143ae39a14225"
+    },
+    {
+      "id": "126",
+      "file": "126-a-white-ellipse-cut-out-of-a-black-background.txt",
+      "prompt": "a white ellipse cut out of a black background",
+      "shape": "ellipse",
+      "style": "negative",
+      "variant": {
+        "name": "right",
+        "center": [
+          12,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.2
+      },
+      "family_id": "ellipse",
+      "variant_id": "ellipse-right",
+      "sha256": "1e69fa587f576e091d2cd229bc071d80678e772552ec9de464371fd583a8d383"
+    },
+    {
+      "id": "127",
+      "file": "127-a-white-ellipse-cut-out-of-a-black-background.txt",
+      "prompt": "a white ellipse cut out of a black background",
+      "shape": "ellipse",
+      "style": "negative",
+      "variant": {
+        "name": "upper",
+        "center": [
+          10,
+          8
+        ],
+        "span": 12,
+        "stroke": 1.1
+      },
+      "family_id": "ellipse",
+      "variant_id": "ellipse-upper",
+      "sha256": "87f889f4b006a4b23f6961156ec7bb82932ee58d580f10658e14cb91ef71fb7d"
+    },
+    {
+      "id": "128",
+      "file": "128-a-white-outline-of-an-ellipse-on-a-black-background.txt",
+      "prompt": "a white outline of an ellipse on a black background",
+      "shape": "ellipse",
+      "style": "negative-outline",
+      "variant": {
+        "name": "large",
+        "center": [
+          10,
+          10
+        ],
+        "span": 15,
+        "stroke": 1.25
+      },
+      "family_id": "ellipse",
+      "variant_id": "ellipse-large",
+      "sha256": "e819d4c9fcff1716d7519d5dd9faeb536b7b1728405ca3605d2b832fd37d15cf"
+    },
+    {
+      "id": "129",
+      "file": "129-a-white-outline-of-an-ellipse-on-a-black-background.txt",
+      "prompt": "a white outline of an ellipse on a black background",
+      "shape": "ellipse",
+      "style": "negative-outline",
+      "variant": {
+        "name": "small",
+        "center": [
+          10,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.0
+      },
+      "family_id": "ellipse",
+      "variant_id": "ellipse-small",
+      "sha256": "47dbee9da74f84ff36d8efdf568ce96d35ed14e0ae4c8c4a35baf722549c6acb"
+    },
+    {
+      "id": "130",
+      "file": "130-a-white-outline-of-an-ellipse-on-a-black-background.txt",
+      "prompt": "a white outline of an ellipse on a black background",
+      "shape": "ellipse",
+      "style": "negative-outline",
+      "variant": {
+        "name": "left",
+        "center": [
+          8,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.4
+      },
+      "family_id": "ellipse",
+      "variant_id": "ellipse-left",
+      "sha256": "3864c0c5d645cb19675644808950d618d42e07b98a9976a7f5077dde91fa286d"
+    },
+    {
+      "id": "131",
+      "file": "131-a-white-outline-of-an-ellipse-on-a-black-background.txt",
+      "prompt": "a white outline of an ellipse on a black background",
+      "shape": "ellipse",
+      "style": "negative-outline",
+      "variant": {
+        "name": "right",
+        "center": [
+          12,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.2
+      },
+      "family_id": "ellipse",
+      "variant_id": "ellipse-right",
+      "sha256": "3434a6b0573e00ffe303672477b1ef425e539d1652e7ada7a7c52819c78000e3"
+    },
+    {
+      "id": "132",
+      "file": "132-a-white-outline-of-an-ellipse-on-a-black-background.txt",
+      "prompt": "a white outline of an ellipse on a black background",
+      "shape": "ellipse",
+      "style": "negative-outline",
+      "variant": {
+        "name": "upper",
+        "center": [
+          10,
+          8
+        ],
+        "span": 12,
+        "stroke": 1.1
+      },
+      "family_id": "ellipse",
+      "variant_id": "ellipse-upper",
+      "sha256": "472d515f0e7b3ad9358b8c1f092ae3ab1eabbf36bcfb9ab5562412cb24cf8576"
+    },
+    {
+      "id": "133",
+      "file": "133-a-filled-black-ellipse-with-a-small-white-circular-hole-on-a-white-background.txt",
+      "prompt": "a filled black ellipse with a small white circular hole on a white background",
+      "shape": "ellipse",
+      "style": "hole",
+      "variant": {
+        "name": "large",
+        "center": [
+          10,
+          10
+        ],
+        "span": 15,
+        "stroke": 1.25
+      },
+      "family_id": "ellipse",
+      "variant_id": "ellipse-large",
+      "sha256": "88d2144226ccfde46356832d46d9183696193d35e4613b63699d7075b43f3344"
+    },
+    {
+      "id": "134",
+      "file": "134-a-filled-black-ellipse-with-a-small-white-circular-hole-on-a-white-background.txt",
+      "prompt": "a filled black ellipse with a small white circular hole on a white background",
+      "shape": "ellipse",
+      "style": "hole",
+      "variant": {
+        "name": "small",
+        "center": [
+          10,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.0
+      },
+      "family_id": "ellipse",
+      "variant_id": "ellipse-small",
+      "sha256": "f757e758211884de26cc7784b577b5e9af9c230f9443dcb6a0035f0affe512d2"
+    },
+    {
+      "id": "135",
+      "file": "135-a-filled-black-ellipse-with-a-small-white-circular-hole-on-a-white-background.txt",
+      "prompt": "a filled black ellipse with a small white circular hole on a white background",
+      "shape": "ellipse",
+      "style": "hole",
+      "variant": {
+        "name": "left",
+        "center": [
+          8,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.4
+      },
+      "family_id": "ellipse",
+      "variant_id": "ellipse-left",
+      "sha256": "9338832905744d4cf3a74689828c82875307e96d77308ba04d0179a7089c6c97"
+    },
+    {
+      "id": "136",
+      "file": "136-a-filled-black-ellipse-with-a-small-white-circular-hole-on-a-white-background.txt",
+      "prompt": "a filled black ellipse with a small white circular hole on a white background",
+      "shape": "ellipse",
+      "style": "hole",
+      "variant": {
+        "name": "right",
+        "center": [
+          12,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.2
+      },
+      "family_id": "ellipse",
+      "variant_id": "ellipse-right",
+      "sha256": "04c8b84a174221f159cb2ca1acfcddc9d16cda9aed348f59daf223201a00d6d3"
+    },
+    {
+      "id": "137",
+      "file": "137-a-filled-black-ellipse-with-a-small-white-circular-hole-on-a-white-background.txt",
+      "prompt": "a filled black ellipse with a small white circular hole on a white background",
+      "shape": "ellipse",
+      "style": "hole",
+      "variant": {
+        "name": "upper",
+        "center": [
+          10,
+          8
+        ],
+        "span": 12,
+        "stroke": 1.1
+      },
+      "family_id": "ellipse",
+      "variant_id": "ellipse-upper",
+      "sha256": "d32a76384772bd38e21158a005e2126aa864047fe9d78be9dc36edca1ed0c2de"
+    },
+    {
+      "id": "138",
+      "file": "138-a-filled-black-diamond-on-a-white-background.txt",
+      "prompt": "a filled black diamond on a white background",
+      "shape": "diamond",
+      "style": "filled",
+      "variant": {
+        "name": "large",
+        "center": [
+          10,
+          10
+        ],
+        "span": 15,
+        "stroke": 1.25
+      },
+      "family_id": "diamond",
+      "variant_id": "diamond-large",
+      "sha256": "a358c78fa8be712ab4640876fa8739c9f03d6f5e6731bb7911d0cd042c69c1a4"
+    },
+    {
+      "id": "139",
+      "file": "139-a-filled-black-diamond-on-a-white-background.txt",
+      "prompt": "a filled black diamond on a white background",
+      "shape": "diamond",
+      "style": "filled",
+      "variant": {
+        "name": "small",
+        "center": [
+          10,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.0
+      },
+      "family_id": "diamond",
+      "variant_id": "diamond-small",
+      "sha256": "99f4c752816becceaa3ae8fe257852e24ef679b5040d0b2bb5c015c3b1886b04"
+    },
+    {
+      "id": "140",
+      "file": "140-a-filled-black-diamond-on-a-white-background.txt",
+      "prompt": "a filled black diamond on a white background",
+      "shape": "diamond",
+      "style": "filled",
+      "variant": {
+        "name": "left",
+        "center": [
+          8,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.4
+      },
+      "family_id": "diamond",
+      "variant_id": "diamond-left",
+      "sha256": "29548d27030d73e26777732644462226742f719b8b1d68222112af3b397d5a23"
+    },
+    {
+      "id": "141",
+      "file": "141-a-filled-black-diamond-on-a-white-background.txt",
+      "prompt": "a filled black diamond on a white background",
+      "shape": "diamond",
+      "style": "filled",
+      "variant": {
+        "name": "right",
+        "center": [
+          12,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.2
+      },
+      "family_id": "diamond",
+      "variant_id": "diamond-right",
+      "sha256": "470ac5e97069667db62b1506a2940780814c32e7b4fd2724eeb19a6de7624057"
+    },
+    {
+      "id": "142",
+      "file": "142-a-filled-black-diamond-on-a-white-background.txt",
+      "prompt": "a filled black diamond on a white background",
+      "shape": "diamond",
+      "style": "filled",
+      "variant": {
+        "name": "upper",
+        "center": [
+          10,
+          8
+        ],
+        "span": 12,
+        "stroke": 1.1
+      },
+      "family_id": "diamond",
+      "variant_id": "diamond-upper",
+      "sha256": "962ad8939c05543a71e39fd7ef2f3cbb47786fe2a760ea9f678ab82643aeb443"
+    },
+    {
+      "id": "143",
+      "file": "143-a-black-outline-of-a-diamond-on-a-white-background.txt",
+      "prompt": "a black outline of a diamond on a white background",
+      "shape": "diamond",
+      "style": "outline",
+      "variant": {
+        "name": "large",
+        "center": [
+          10,
+          10
+        ],
+        "span": 15,
+        "stroke": 1.25
+      },
+      "family_id": "diamond",
+      "variant_id": "diamond-large",
+      "sha256": "55500a00b391a787c0dccf979ec2266f8cda9075152ece385252c4443b9bc744"
+    },
+    {
+      "id": "144",
+      "file": "144-a-black-outline-of-a-diamond-on-a-white-background.txt",
+      "prompt": "a black outline of a diamond on a white background",
+      "shape": "diamond",
+      "style": "outline",
+      "variant": {
+        "name": "small",
+        "center": [
+          10,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.0
+      },
+      "family_id": "diamond",
+      "variant_id": "diamond-small",
+      "sha256": "825b4469369dc02c6dada7ed704c3066dfb3e3f42f455e40e91e47bcf244a234"
+    },
+    {
+      "id": "145",
+      "file": "145-a-black-outline-of-a-diamond-on-a-white-background.txt",
+      "prompt": "a black outline of a diamond on a white background",
+      "shape": "diamond",
+      "style": "outline",
+      "variant": {
+        "name": "left",
+        "center": [
+          8,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.4
+      },
+      "family_id": "diamond",
+      "variant_id": "diamond-left",
+      "sha256": "59417cfe66d35d9407a0871022e750490179d262190f013672d6ef6a49e69a1c"
+    },
+    {
+      "id": "146",
+      "file": "146-a-black-outline-of-a-diamond-on-a-white-background.txt",
+      "prompt": "a black outline of a diamond on a white background",
+      "shape": "diamond",
+      "style": "outline",
+      "variant": {
+        "name": "right",
+        "center": [
+          12,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.2
+      },
+      "family_id": "diamond",
+      "variant_id": "diamond-right",
+      "sha256": "7d4b7568c302ed0dbbd20ef3ebeadfd4ac94a82f563b8b382f9aa0740d4b8808"
+    },
+    {
+      "id": "147",
+      "file": "147-a-black-outline-of-a-diamond-on-a-white-background.txt",
+      "prompt": "a black outline of a diamond on a white background",
+      "shape": "diamond",
+      "style": "outline",
+      "variant": {
+        "name": "upper",
+        "center": [
+          10,
+          8
+        ],
+        "span": 12,
+        "stroke": 1.1
+      },
+      "family_id": "diamond",
+      "variant_id": "diamond-upper",
+      "sha256": "79b8ec0500e23f7298dcb05f8aab79fef576d02bb6608fcaa474d6ee2d4dd893"
+    },
+    {
+      "id": "148",
+      "file": "148-a-white-diamond-cut-out-of-a-black-background.txt",
+      "prompt": "a white diamond cut out of a black background",
+      "shape": "diamond",
+      "style": "negative",
+      "variant": {
+        "name": "large",
+        "center": [
+          10,
+          10
+        ],
+        "span": 15,
+        "stroke": 1.25
+      },
+      "family_id": "diamond",
+      "variant_id": "diamond-large",
+      "sha256": "0fd2267e9034a34be39d04d2f561750842ef22b90735dcdb11df111c345544d3"
+    },
+    {
+      "id": "149",
+      "file": "149-a-white-diamond-cut-out-of-a-black-background.txt",
+      "prompt": "a white diamond cut out of a black background",
+      "shape": "diamond",
+      "style": "negative",
+      "variant": {
+        "name": "small",
+        "center": [
+          10,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.0
+      },
+      "family_id": "diamond",
+      "variant_id": "diamond-small",
+      "sha256": "1ae7b16a0cd4f49fbe372f28f0eb71e5b7b9c813506c632de78b5d45ae3fe29e"
+    },
+    {
+      "id": "150",
+      "file": "150-a-white-diamond-cut-out-of-a-black-background.txt",
+      "prompt": "a white diamond cut out of a black background",
+      "shape": "diamond",
+      "style": "negative",
+      "variant": {
+        "name": "left",
+        "center": [
+          8,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.4
+      },
+      "family_id": "diamond",
+      "variant_id": "diamond-left",
+      "sha256": "9eb5270d940985aaafed9b9a7cf11db13ed0a7a7220481f1493194776aed8547"
+    },
+    {
+      "id": "151",
+      "file": "151-a-white-diamond-cut-out-of-a-black-background.txt",
+      "prompt": "a white diamond cut out of a black background",
+      "shape": "diamond",
+      "style": "negative",
+      "variant": {
+        "name": "right",
+        "center": [
+          12,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.2
+      },
+      "family_id": "diamond",
+      "variant_id": "diamond-right",
+      "sha256": "a40e3250d5a8d5b6c90987eacb2a31689c3fd906cae72c1c27338c56e01a7b88"
+    },
+    {
+      "id": "152",
+      "file": "152-a-white-diamond-cut-out-of-a-black-background.txt",
+      "prompt": "a white diamond cut out of a black background",
+      "shape": "diamond",
+      "style": "negative",
+      "variant": {
+        "name": "upper",
+        "center": [
+          10,
+          8
+        ],
+        "span": 12,
+        "stroke": 1.1
+      },
+      "family_id": "diamond",
+      "variant_id": "diamond-upper",
+      "sha256": "a6a3ca46d58dcc6881c91ba74af32b7c3a86ba87764aeeae4acdda9fbc98a836"
+    },
+    {
+      "id": "153",
+      "file": "153-a-white-outline-of-a-diamond-on-a-black-background.txt",
+      "prompt": "a white outline of a diamond on a black background",
+      "shape": "diamond",
+      "style": "negative-outline",
+      "variant": {
+        "name": "large",
+        "center": [
+          10,
+          10
+        ],
+        "span": 15,
+        "stroke": 1.25
+      },
+      "family_id": "diamond",
+      "variant_id": "diamond-large",
+      "sha256": "41bc8f0add3f224a54d467fdbd720ca4ae9fd1702de7e3382c40197cdc2dc636"
+    },
+    {
+      "id": "154",
+      "file": "154-a-white-outline-of-a-diamond-on-a-black-background.txt",
+      "prompt": "a white outline of a diamond on a black background",
+      "shape": "diamond",
+      "style": "negative-outline",
+      "variant": {
+        "name": "small",
+        "center": [
+          10,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.0
+      },
+      "family_id": "diamond",
+      "variant_id": "diamond-small",
+      "sha256": "79b2304247fe2634287e763ff96ba6c23933b31c2b5a4d9f88ac461a33545a95"
+    },
+    {
+      "id": "155",
+      "file": "155-a-white-outline-of-a-diamond-on-a-black-background.txt",
+      "prompt": "a white outline of a diamond on a black background",
+      "shape": "diamond",
+      "style": "negative-outline",
+      "variant": {
+        "name": "left",
+        "center": [
+          8,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.4
+      },
+      "family_id": "diamond",
+      "variant_id": "diamond-left",
+      "sha256": "fe79036f5d04335e52ae3bf866bd458c494b75056e8dccc62a15e6b876605192"
+    },
+    {
+      "id": "156",
+      "file": "156-a-white-outline-of-a-diamond-on-a-black-background.txt",
+      "prompt": "a white outline of a diamond on a black background",
+      "shape": "diamond",
+      "style": "negative-outline",
+      "variant": {
+        "name": "right",
+        "center": [
+          12,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.2
+      },
+      "family_id": "diamond",
+      "variant_id": "diamond-right",
+      "sha256": "fa33e43bc8cdce455532ddd83b927b5218fb3dd6d673dc891a1dab6f7be47bcd"
+    },
+    {
+      "id": "157",
+      "file": "157-a-white-outline-of-a-diamond-on-a-black-background.txt",
+      "prompt": "a white outline of a diamond on a black background",
+      "shape": "diamond",
+      "style": "negative-outline",
+      "variant": {
+        "name": "upper",
+        "center": [
+          10,
+          8
+        ],
+        "span": 12,
+        "stroke": 1.1
+      },
+      "family_id": "diamond",
+      "variant_id": "diamond-upper",
+      "sha256": "ae29c82d0b0d141021955311dfcbb528bd833af89c26052916b82e7da2756084"
+    },
+    {
+      "id": "158",
+      "file": "158-a-filled-black-diamond-with-a-small-white-circular-hole-on-a-white-background.txt",
+      "prompt": "a filled black diamond with a small white circular hole on a white background",
+      "shape": "diamond",
+      "style": "hole",
+      "variant": {
+        "name": "large",
+        "center": [
+          10,
+          10
+        ],
+        "span": 15,
+        "stroke": 1.25
+      },
+      "family_id": "diamond",
+      "variant_id": "diamond-large",
+      "sha256": "c24e04683b081ecf1c71602ecf7103b2e06032736872ff0f5b4d83a4d9fb6602"
+    },
+    {
+      "id": "159",
+      "file": "159-a-filled-black-diamond-with-a-small-white-circular-hole-on-a-white-background.txt",
+      "prompt": "a filled black diamond with a small white circular hole on a white background",
+      "shape": "diamond",
+      "style": "hole",
+      "variant": {
+        "name": "small",
+        "center": [
+          10,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.0
+      },
+      "family_id": "diamond",
+      "variant_id": "diamond-small",
+      "sha256": "41a464df3386c89b9c8c17a88f772afa5a5ae342e0753918077c9f9f2f991e7c"
+    },
+    {
+      "id": "160",
+      "file": "160-a-filled-black-diamond-with-a-small-white-circular-hole-on-a-white-background.txt",
+      "prompt": "a filled black diamond with a small white circular hole on a white background",
+      "shape": "diamond",
+      "style": "hole",
+      "variant": {
+        "name": "left",
+        "center": [
+          8,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.4
+      },
+      "family_id": "diamond",
+      "variant_id": "diamond-left",
+      "sha256": "fa4ff0049beff8a01378b54667f6e3de7db4254c3861a9588c68a5aeee98f872"
+    },
+    {
+      "id": "161",
+      "file": "161-a-filled-black-diamond-with-a-small-white-circular-hole-on-a-white-background.txt",
+      "prompt": "a filled black diamond with a small white circular hole on a white background",
+      "shape": "diamond",
+      "style": "hole",
+      "variant": {
+        "name": "right",
+        "center": [
+          12,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.2
+      },
+      "family_id": "diamond",
+      "variant_id": "diamond-right",
+      "sha256": "7cbe83e00ffc2653f1b6db5b4043b5ff64e966d921b8f82a125382979738931b"
+    },
+    {
+      "id": "162",
+      "file": "162-a-filled-black-diamond-with-a-small-white-circular-hole-on-a-white-background.txt",
+      "prompt": "a filled black diamond with a small white circular hole on a white background",
+      "shape": "diamond",
+      "style": "hole",
+      "variant": {
+        "name": "upper",
+        "center": [
+          10,
+          8
+        ],
+        "span": 12,
+        "stroke": 1.1
+      },
+      "family_id": "diamond",
+      "variant_id": "diamond-upper",
+      "sha256": "a89e1bec7014573b3aa1ed8e43126e5a0ea5e4a67d646f2654d440b2a625fbb1"
+    },
+    {
+      "id": "163",
+      "file": "163-a-filled-black-pentagon-on-a-white-background.txt",
+      "prompt": "a filled black pentagon on a white background",
+      "shape": "pentagon",
+      "style": "filled",
+      "variant": {
+        "name": "large",
+        "center": [
+          10,
+          10
+        ],
+        "span": 15,
+        "stroke": 1.25
+      },
+      "family_id": "pentagon",
+      "variant_id": "pentagon-large",
+      "sha256": "c19a6a3acd9f4686f125fa4482096c20ec871ad574e5b5ae6da53b2108d48e28"
+    },
+    {
+      "id": "164",
+      "file": "164-a-filled-black-pentagon-on-a-white-background.txt",
+      "prompt": "a filled black pentagon on a white background",
+      "shape": "pentagon",
+      "style": "filled",
+      "variant": {
+        "name": "small",
+        "center": [
+          10,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.0
+      },
+      "family_id": "pentagon",
+      "variant_id": "pentagon-small",
+      "sha256": "4ba9bdea957a6d54bc151c65826588432085fdcb63e4883442321229087ff41d"
+    },
+    {
+      "id": "165",
+      "file": "165-a-filled-black-pentagon-on-a-white-background.txt",
+      "prompt": "a filled black pentagon on a white background",
+      "shape": "pentagon",
+      "style": "filled",
+      "variant": {
+        "name": "left",
+        "center": [
+          8,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.4
+      },
+      "family_id": "pentagon",
+      "variant_id": "pentagon-left",
+      "sha256": "e0a50da7f2abe32692633a8f650f48ef810bedeb0c4062e82618378d5409ba4f"
+    },
+    {
+      "id": "166",
+      "file": "166-a-filled-black-pentagon-on-a-white-background.txt",
+      "prompt": "a filled black pentagon on a white background",
+      "shape": "pentagon",
+      "style": "filled",
+      "variant": {
+        "name": "right",
+        "center": [
+          12,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.2
+      },
+      "family_id": "pentagon",
+      "variant_id": "pentagon-right",
+      "sha256": "071d4dc24940a376294f398fdedba19d4f10703ef60ea846747456bcd10686ef"
+    },
+    {
+      "id": "167",
+      "file": "167-a-filled-black-pentagon-on-a-white-background.txt",
+      "prompt": "a filled black pentagon on a white background",
+      "shape": "pentagon",
+      "style": "filled",
+      "variant": {
+        "name": "upper",
+        "center": [
+          10,
+          8
+        ],
+        "span": 12,
+        "stroke": 1.1
+      },
+      "family_id": "pentagon",
+      "variant_id": "pentagon-upper",
+      "sha256": "2f848c9cf783dd3a5032fd6400f229eccce8ed133528e8b073948bcf7618c39f"
+    },
+    {
+      "id": "168",
+      "file": "168-a-black-outline-of-a-pentagon-on-a-white-background.txt",
+      "prompt": "a black outline of a pentagon on a white background",
+      "shape": "pentagon",
+      "style": "outline",
+      "variant": {
+        "name": "large",
+        "center": [
+          10,
+          10
+        ],
+        "span": 15,
+        "stroke": 1.25
+      },
+      "family_id": "pentagon",
+      "variant_id": "pentagon-large",
+      "sha256": "32e347549d051fa63a5018ab31daa91ce57057ee740239a4fc7c91ae5b6daeba"
+    },
+    {
+      "id": "169",
+      "file": "169-a-black-outline-of-a-pentagon-on-a-white-background.txt",
+      "prompt": "a black outline of a pentagon on a white background",
+      "shape": "pentagon",
+      "style": "outline",
+      "variant": {
+        "name": "small",
+        "center": [
+          10,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.0
+      },
+      "family_id": "pentagon",
+      "variant_id": "pentagon-small",
+      "sha256": "dd2dc5ace826925deb9a9da787af84db7a2c2c125e9de92aaf51520628650b4d"
+    },
+    {
+      "id": "170",
+      "file": "170-a-black-outline-of-a-pentagon-on-a-white-background.txt",
+      "prompt": "a black outline of a pentagon on a white background",
+      "shape": "pentagon",
+      "style": "outline",
+      "variant": {
+        "name": "left",
+        "center": [
+          8,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.4
+      },
+      "family_id": "pentagon",
+      "variant_id": "pentagon-left",
+      "sha256": "d05a668e5c0e2dca95e658d9c85e87c2b391855e27697a385777b8de9603452d"
+    },
+    {
+      "id": "171",
+      "file": "171-a-black-outline-of-a-pentagon-on-a-white-background.txt",
+      "prompt": "a black outline of a pentagon on a white background",
+      "shape": "pentagon",
+      "style": "outline",
+      "variant": {
+        "name": "right",
+        "center": [
+          12,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.2
+      },
+      "family_id": "pentagon",
+      "variant_id": "pentagon-right",
+      "sha256": "83f1fbe565a55947ed043f14eaf4c5daf7db9bb7d9bc3ed29c4c7ce35000747b"
+    },
+    {
+      "id": "172",
+      "file": "172-a-black-outline-of-a-pentagon-on-a-white-background.txt",
+      "prompt": "a black outline of a pentagon on a white background",
+      "shape": "pentagon",
+      "style": "outline",
+      "variant": {
+        "name": "upper",
+        "center": [
+          10,
+          8
+        ],
+        "span": 12,
+        "stroke": 1.1
+      },
+      "family_id": "pentagon",
+      "variant_id": "pentagon-upper",
+      "sha256": "2ae0851978bd7b81be7eac72d73768b4876e5c176e8ac8077cdeb4911a952c8e"
+    },
+    {
+      "id": "173",
+      "file": "173-a-white-pentagon-cut-out-of-a-black-background.txt",
+      "prompt": "a white pentagon cut out of a black background",
+      "shape": "pentagon",
+      "style": "negative",
+      "variant": {
+        "name": "large",
+        "center": [
+          10,
+          10
+        ],
+        "span": 15,
+        "stroke": 1.25
+      },
+      "family_id": "pentagon",
+      "variant_id": "pentagon-large",
+      "sha256": "9835768f348cfddc53da38efac19cd53a0b14723c8c937af7e7e6308c768beea"
+    },
+    {
+      "id": "174",
+      "file": "174-a-white-pentagon-cut-out-of-a-black-background.txt",
+      "prompt": "a white pentagon cut out of a black background",
+      "shape": "pentagon",
+      "style": "negative",
+      "variant": {
+        "name": "small",
+        "center": [
+          10,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.0
+      },
+      "family_id": "pentagon",
+      "variant_id": "pentagon-small",
+      "sha256": "d725867614779bbadd3cdffb33d0626ab218f1f65b071a2ba239ea5f56390ebd"
+    },
+    {
+      "id": "175",
+      "file": "175-a-white-pentagon-cut-out-of-a-black-background.txt",
+      "prompt": "a white pentagon cut out of a black background",
+      "shape": "pentagon",
+      "style": "negative",
+      "variant": {
+        "name": "left",
+        "center": [
+          8,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.4
+      },
+      "family_id": "pentagon",
+      "variant_id": "pentagon-left",
+      "sha256": "5db745a94a81d7f0e531d8b1d7a02fe853439459d0d810907d343787cf83d6f2"
+    },
+    {
+      "id": "176",
+      "file": "176-a-white-pentagon-cut-out-of-a-black-background.txt",
+      "prompt": "a white pentagon cut out of a black background",
+      "shape": "pentagon",
+      "style": "negative",
+      "variant": {
+        "name": "right",
+        "center": [
+          12,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.2
+      },
+      "family_id": "pentagon",
+      "variant_id": "pentagon-right",
+      "sha256": "8d8a7b64d1a41168e458eee52cfb0373178ae1ac9cd7ce9f9da80c1d92cff476"
+    },
+    {
+      "id": "177",
+      "file": "177-a-white-pentagon-cut-out-of-a-black-background.txt",
+      "prompt": "a white pentagon cut out of a black background",
+      "shape": "pentagon",
+      "style": "negative",
+      "variant": {
+        "name": "upper",
+        "center": [
+          10,
+          8
+        ],
+        "span": 12,
+        "stroke": 1.1
+      },
+      "family_id": "pentagon",
+      "variant_id": "pentagon-upper",
+      "sha256": "e51f9f4ec12f94bac6054806593d29940150b2c3e87d1a485ac8933796b23085"
+    },
+    {
+      "id": "178",
+      "file": "178-a-white-outline-of-a-pentagon-on-a-black-background.txt",
+      "prompt": "a white outline of a pentagon on a black background",
+      "shape": "pentagon",
+      "style": "negative-outline",
+      "variant": {
+        "name": "large",
+        "center": [
+          10,
+          10
+        ],
+        "span": 15,
+        "stroke": 1.25
+      },
+      "family_id": "pentagon",
+      "variant_id": "pentagon-large",
+      "sha256": "6c2801ec018084dee3a4f82f407dd91ef10b84590018f7911705845916e465c8"
+    },
+    {
+      "id": "179",
+      "file": "179-a-white-outline-of-a-pentagon-on-a-black-background.txt",
+      "prompt": "a white outline of a pentagon on a black background",
+      "shape": "pentagon",
+      "style": "negative-outline",
+      "variant": {
+        "name": "small",
+        "center": [
+          10,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.0
+      },
+      "family_id": "pentagon",
+      "variant_id": "pentagon-small",
+      "sha256": "92f0585bb1f3db634ed4cf297deface7fd6b498f8deda90e5fac92cbcc9ad0b5"
+    },
+    {
+      "id": "180",
+      "file": "180-a-white-outline-of-a-pentagon-on-a-black-background.txt",
+      "prompt": "a white outline of a pentagon on a black background",
+      "shape": "pentagon",
+      "style": "negative-outline",
+      "variant": {
+        "name": "left",
+        "center": [
+          8,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.4
+      },
+      "family_id": "pentagon",
+      "variant_id": "pentagon-left",
+      "sha256": "b2ffa9f7e9da865e37da112d37f35da2bf60bfa8d315b89d5caf1aa0c1dabdb3"
+    },
+    {
+      "id": "181",
+      "file": "181-a-white-outline-of-a-pentagon-on-a-black-background.txt",
+      "prompt": "a white outline of a pentagon on a black background",
+      "shape": "pentagon",
+      "style": "negative-outline",
+      "variant": {
+        "name": "right",
+        "center": [
+          12,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.2
+      },
+      "family_id": "pentagon",
+      "variant_id": "pentagon-right",
+      "sha256": "9fedc17d82d78f4407c40af4d3a8f192d7f69bf6b191fa6c726c19ba7d731041"
+    },
+    {
+      "id": "182",
+      "file": "182-a-white-outline-of-a-pentagon-on-a-black-background.txt",
+      "prompt": "a white outline of a pentagon on a black background",
+      "shape": "pentagon",
+      "style": "negative-outline",
+      "variant": {
+        "name": "upper",
+        "center": [
+          10,
+          8
+        ],
+        "span": 12,
+        "stroke": 1.1
+      },
+      "family_id": "pentagon",
+      "variant_id": "pentagon-upper",
+      "sha256": "f3daec4a5b7aad30e17b0c1b5cea84386a4429cb3724a0b4c7f10525278715ed"
+    },
+    {
+      "id": "183",
+      "file": "183-a-filled-black-pentagon-with-a-small-white-circular-hole-on-a-white-background.txt",
+      "prompt": "a filled black pentagon with a small white circular hole on a white background",
+      "shape": "pentagon",
+      "style": "hole",
+      "variant": {
+        "name": "large",
+        "center": [
+          10,
+          10
+        ],
+        "span": 15,
+        "stroke": 1.25
+      },
+      "family_id": "pentagon",
+      "variant_id": "pentagon-large",
+      "sha256": "9d07a60cf8b631081688f1c63371c007c81250f45338a8d6b9f850dd3bb0dcb0"
+    },
+    {
+      "id": "184",
+      "file": "184-a-filled-black-pentagon-with-a-small-white-circular-hole-on-a-white-background.txt",
+      "prompt": "a filled black pentagon with a small white circular hole on a white background",
+      "shape": "pentagon",
+      "style": "hole",
+      "variant": {
+        "name": "small",
+        "center": [
+          10,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.0
+      },
+      "family_id": "pentagon",
+      "variant_id": "pentagon-small",
+      "sha256": "e5e856c438e1d2b17af5937dae9c71d7db7520c33dd263df9e5c4514cf788d5a"
+    },
+    {
+      "id": "185",
+      "file": "185-a-filled-black-pentagon-with-a-small-white-circular-hole-on-a-white-background.txt",
+      "prompt": "a filled black pentagon with a small white circular hole on a white background",
+      "shape": "pentagon",
+      "style": "hole",
+      "variant": {
+        "name": "left",
+        "center": [
+          8,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.4
+      },
+      "family_id": "pentagon",
+      "variant_id": "pentagon-left",
+      "sha256": "b99b8b8198f11b362e3590c35d85931cc8a60629dd9b8abdd5222f5e9c50d71a"
+    },
+    {
+      "id": "186",
+      "file": "186-a-filled-black-pentagon-with-a-small-white-circular-hole-on-a-white-background.txt",
+      "prompt": "a filled black pentagon with a small white circular hole on a white background",
+      "shape": "pentagon",
+      "style": "hole",
+      "variant": {
+        "name": "right",
+        "center": [
+          12,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.2
+      },
+      "family_id": "pentagon",
+      "variant_id": "pentagon-right",
+      "sha256": "b54d45a18a40a5f3b1b035902bccc575c7b0ce70cd5ade660a10e4f8815f3699"
+    },
+    {
+      "id": "187",
+      "file": "187-a-filled-black-pentagon-with-a-small-white-circular-hole-on-a-white-background.txt",
+      "prompt": "a filled black pentagon with a small white circular hole on a white background",
+      "shape": "pentagon",
+      "style": "hole",
+      "variant": {
+        "name": "upper",
+        "center": [
+          10,
+          8
+        ],
+        "span": 12,
+        "stroke": 1.1
+      },
+      "family_id": "pentagon",
+      "variant_id": "pentagon-upper",
+      "sha256": "2b0bdef11d8459db2d5e43ec86638d85426b8cd62f94bc12872cbdc834956f3f"
+    },
+    {
+      "id": "188",
+      "file": "188-a-filled-black-hexagon-on-a-white-background.txt",
+      "prompt": "a filled black hexagon on a white background",
+      "shape": "hexagon",
+      "style": "filled",
+      "variant": {
+        "name": "large",
+        "center": [
+          10,
+          10
+        ],
+        "span": 15,
+        "stroke": 1.25
+      },
+      "family_id": "hexagon",
+      "variant_id": "hexagon-large",
+      "sha256": "83ef1967b448deaac70c9db354cb6fb6d4958a9af465c9788b151215485adab3"
+    },
+    {
+      "id": "189",
+      "file": "189-a-filled-black-hexagon-on-a-white-background.txt",
+      "prompt": "a filled black hexagon on a white background",
+      "shape": "hexagon",
+      "style": "filled",
+      "variant": {
+        "name": "small",
+        "center": [
+          10,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.0
+      },
+      "family_id": "hexagon",
+      "variant_id": "hexagon-small",
+      "sha256": "f17d14d86ec433eb6dfca918097786eef85713decaf0b036b4467faaa43046ae"
+    },
+    {
+      "id": "190",
+      "file": "190-a-filled-black-hexagon-on-a-white-background.txt",
+      "prompt": "a filled black hexagon on a white background",
+      "shape": "hexagon",
+      "style": "filled",
+      "variant": {
+        "name": "left",
+        "center": [
+          8,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.4
+      },
+      "family_id": "hexagon",
+      "variant_id": "hexagon-left",
+      "sha256": "fad1984261006ccb9e5ad27bf57391b0245beeb1ff48362db63569831531abc0"
+    },
+    {
+      "id": "191",
+      "file": "191-a-filled-black-hexagon-on-a-white-background.txt",
+      "prompt": "a filled black hexagon on a white background",
+      "shape": "hexagon",
+      "style": "filled",
+      "variant": {
+        "name": "right",
+        "center": [
+          12,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.2
+      },
+      "family_id": "hexagon",
+      "variant_id": "hexagon-right",
+      "sha256": "5fc26ceb3af533775c4a5ebb7d4686d4e8ee6d3d025ad05a5a2ca187e1767ebd"
+    },
+    {
+      "id": "192",
+      "file": "192-a-filled-black-hexagon-on-a-white-background.txt",
+      "prompt": "a filled black hexagon on a white background",
+      "shape": "hexagon",
+      "style": "filled",
+      "variant": {
+        "name": "upper",
+        "center": [
+          10,
+          8
+        ],
+        "span": 12,
+        "stroke": 1.1
+      },
+      "family_id": "hexagon",
+      "variant_id": "hexagon-upper",
+      "sha256": "57acc14b27acbc28f677caafc50e4e7613277ddc20f3005e788b066b5ae6f5ca"
+    },
+    {
+      "id": "193",
+      "file": "193-a-black-outline-of-a-hexagon-on-a-white-background.txt",
+      "prompt": "a black outline of a hexagon on a white background",
+      "shape": "hexagon",
+      "style": "outline",
+      "variant": {
+        "name": "large",
+        "center": [
+          10,
+          10
+        ],
+        "span": 15,
+        "stroke": 1.25
+      },
+      "family_id": "hexagon",
+      "variant_id": "hexagon-large",
+      "sha256": "1fec14ec8e7da086c8a0bd139d742b9e9a670c036859ed9a915792a07114ff62"
+    },
+    {
+      "id": "194",
+      "file": "194-a-black-outline-of-a-hexagon-on-a-white-background.txt",
+      "prompt": "a black outline of a hexagon on a white background",
+      "shape": "hexagon",
+      "style": "outline",
+      "variant": {
+        "name": "small",
+        "center": [
+          10,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.0
+      },
+      "family_id": "hexagon",
+      "variant_id": "hexagon-small",
+      "sha256": "f4c823c50be48133ee0e59a7c049866681d895ff8f42d3c3892b25c9b0e4220e"
+    },
+    {
+      "id": "195",
+      "file": "195-a-black-outline-of-a-hexagon-on-a-white-background.txt",
+      "prompt": "a black outline of a hexagon on a white background",
+      "shape": "hexagon",
+      "style": "outline",
+      "variant": {
+        "name": "left",
+        "center": [
+          8,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.4
+      },
+      "family_id": "hexagon",
+      "variant_id": "hexagon-left",
+      "sha256": "22dad8006062131c163babb4301b42d58eda14932ebdabb318e5d056e046d655"
+    },
+    {
+      "id": "196",
+      "file": "196-a-black-outline-of-a-hexagon-on-a-white-background.txt",
+      "prompt": "a black outline of a hexagon on a white background",
+      "shape": "hexagon",
+      "style": "outline",
+      "variant": {
+        "name": "right",
+        "center": [
+          12,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.2
+      },
+      "family_id": "hexagon",
+      "variant_id": "hexagon-right",
+      "sha256": "0b0f662ab1ee109d7bd207b6b2148202bb24478d6035419154a4f2b62ce07e07"
+    },
+    {
+      "id": "197",
+      "file": "197-a-black-outline-of-a-hexagon-on-a-white-background.txt",
+      "prompt": "a black outline of a hexagon on a white background",
+      "shape": "hexagon",
+      "style": "outline",
+      "variant": {
+        "name": "upper",
+        "center": [
+          10,
+          8
+        ],
+        "span": 12,
+        "stroke": 1.1
+      },
+      "family_id": "hexagon",
+      "variant_id": "hexagon-upper",
+      "sha256": "571234f79319097be6a6918be9a02081d617a94408d83ad18e9b4a5cf1b0b7f7"
+    },
+    {
+      "id": "198",
+      "file": "198-a-white-hexagon-cut-out-of-a-black-background.txt",
+      "prompt": "a white hexagon cut out of a black background",
+      "shape": "hexagon",
+      "style": "negative",
+      "variant": {
+        "name": "large",
+        "center": [
+          10,
+          10
+        ],
+        "span": 15,
+        "stroke": 1.25
+      },
+      "family_id": "hexagon",
+      "variant_id": "hexagon-large",
+      "sha256": "b8d1c160a02d2b57ce27dd650c8c451fb5e6fd222b0cfdf5f49d8668dff3948b"
+    },
+    {
+      "id": "199",
+      "file": "199-a-white-hexagon-cut-out-of-a-black-background.txt",
+      "prompt": "a white hexagon cut out of a black background",
+      "shape": "hexagon",
+      "style": "negative",
+      "variant": {
+        "name": "small",
+        "center": [
+          10,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.0
+      },
+      "family_id": "hexagon",
+      "variant_id": "hexagon-small",
+      "sha256": "798853336b78da45099d26a90741acd013997774cfdbf60b2892d6d8527e71ff"
+    },
+    {
+      "id": "200",
+      "file": "200-a-white-hexagon-cut-out-of-a-black-background.txt",
+      "prompt": "a white hexagon cut out of a black background",
+      "shape": "hexagon",
+      "style": "negative",
+      "variant": {
+        "name": "left",
+        "center": [
+          8,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.4
+      },
+      "family_id": "hexagon",
+      "variant_id": "hexagon-left",
+      "sha256": "0365178fac486195cc79660f122401c009fdf5e02f0a3e571b6fe965a023930e"
+    },
+    {
+      "id": "201",
+      "file": "201-a-white-hexagon-cut-out-of-a-black-background.txt",
+      "prompt": "a white hexagon cut out of a black background",
+      "shape": "hexagon",
+      "style": "negative",
+      "variant": {
+        "name": "right",
+        "center": [
+          12,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.2
+      },
+      "family_id": "hexagon",
+      "variant_id": "hexagon-right",
+      "sha256": "b43ca9809ae2381a722c27a9d3fe878434fd61af9804e008fc70356b70e1a64f"
+    },
+    {
+      "id": "202",
+      "file": "202-a-white-hexagon-cut-out-of-a-black-background.txt",
+      "prompt": "a white hexagon cut out of a black background",
+      "shape": "hexagon",
+      "style": "negative",
+      "variant": {
+        "name": "upper",
+        "center": [
+          10,
+          8
+        ],
+        "span": 12,
+        "stroke": 1.1
+      },
+      "family_id": "hexagon",
+      "variant_id": "hexagon-upper",
+      "sha256": "4169c3ecbf11d5399d89e690122f644b0fd3f227731013cf13dcbf93551bb3c9"
+    },
+    {
+      "id": "203",
+      "file": "203-a-white-outline-of-a-hexagon-on-a-black-background.txt",
+      "prompt": "a white outline of a hexagon on a black background",
+      "shape": "hexagon",
+      "style": "negative-outline",
+      "variant": {
+        "name": "large",
+        "center": [
+          10,
+          10
+        ],
+        "span": 15,
+        "stroke": 1.25
+      },
+      "family_id": "hexagon",
+      "variant_id": "hexagon-large",
+      "sha256": "3c3da258c7b2148d34d1d4334e4a2e72476bbd31453610c68c060844a0f2db86"
+    },
+    {
+      "id": "204",
+      "file": "204-a-white-outline-of-a-hexagon-on-a-black-background.txt",
+      "prompt": "a white outline of a hexagon on a black background",
+      "shape": "hexagon",
+      "style": "negative-outline",
+      "variant": {
+        "name": "small",
+        "center": [
+          10,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.0
+      },
+      "family_id": "hexagon",
+      "variant_id": "hexagon-small",
+      "sha256": "4fa4ba7e919488b7cf74e66aea0eb72b1b46136d0d8dba98dedaa43fadfb7740"
+    },
+    {
+      "id": "205",
+      "file": "205-a-white-outline-of-a-hexagon-on-a-black-background.txt",
+      "prompt": "a white outline of a hexagon on a black background",
+      "shape": "hexagon",
+      "style": "negative-outline",
+      "variant": {
+        "name": "left",
+        "center": [
+          8,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.4
+      },
+      "family_id": "hexagon",
+      "variant_id": "hexagon-left",
+      "sha256": "ff1230f38c9f4f4d78c54b50200c92a8ea54554013766ac8e4c0b507fb79acea"
+    },
+    {
+      "id": "206",
+      "file": "206-a-white-outline-of-a-hexagon-on-a-black-background.txt",
+      "prompt": "a white outline of a hexagon on a black background",
+      "shape": "hexagon",
+      "style": "negative-outline",
+      "variant": {
+        "name": "right",
+        "center": [
+          12,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.2
+      },
+      "family_id": "hexagon",
+      "variant_id": "hexagon-right",
+      "sha256": "42e1c9325392774a5df1e787e42406fc8d9b7143bdce36a568500a6e290d9f4e"
+    },
+    {
+      "id": "207",
+      "file": "207-a-white-outline-of-a-hexagon-on-a-black-background.txt",
+      "prompt": "a white outline of a hexagon on a black background",
+      "shape": "hexagon",
+      "style": "negative-outline",
+      "variant": {
+        "name": "upper",
+        "center": [
+          10,
+          8
+        ],
+        "span": 12,
+        "stroke": 1.1
+      },
+      "family_id": "hexagon",
+      "variant_id": "hexagon-upper",
+      "sha256": "d0d7bf54fc17a2fca784800f791b0d7fcda9a0a16ded45e9c47ff448a2e62515"
+    },
+    {
+      "id": "208",
+      "file": "208-a-filled-black-hexagon-with-a-small-white-circular-hole-on-a-white-background.txt",
+      "prompt": "a filled black hexagon with a small white circular hole on a white background",
+      "shape": "hexagon",
+      "style": "hole",
+      "variant": {
+        "name": "large",
+        "center": [
+          10,
+          10
+        ],
+        "span": 15,
+        "stroke": 1.25
+      },
+      "family_id": "hexagon",
+      "variant_id": "hexagon-large",
+      "sha256": "567571eb96d7908ee42182af32ea3b228406c02e48017a73ee4fe9aa10ff9f61"
+    },
+    {
+      "id": "209",
+      "file": "209-a-filled-black-hexagon-with-a-small-white-circular-hole-on-a-white-background.txt",
+      "prompt": "a filled black hexagon with a small white circular hole on a white background",
+      "shape": "hexagon",
+      "style": "hole",
+      "variant": {
+        "name": "small",
+        "center": [
+          10,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.0
+      },
+      "family_id": "hexagon",
+      "variant_id": "hexagon-small",
+      "sha256": "f873813a7e3d04811f9f16f087a76b85a180d93f5cf3472d6a8fe3c1ec0cf9c3"
+    },
+    {
+      "id": "210",
+      "file": "210-a-filled-black-hexagon-with-a-small-white-circular-hole-on-a-white-background.txt",
+      "prompt": "a filled black hexagon with a small white circular hole on a white background",
+      "shape": "hexagon",
+      "style": "hole",
+      "variant": {
+        "name": "left",
+        "center": [
+          8,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.4
+      },
+      "family_id": "hexagon",
+      "variant_id": "hexagon-left",
+      "sha256": "0a041520c8747b47ed8db9968623fd7b070384a104c85b42804959f9fe970fe4"
+    },
+    {
+      "id": "211",
+      "file": "211-a-filled-black-hexagon-with-a-small-white-circular-hole-on-a-white-background.txt",
+      "prompt": "a filled black hexagon with a small white circular hole on a white background",
+      "shape": "hexagon",
+      "style": "hole",
+      "variant": {
+        "name": "right",
+        "center": [
+          12,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.2
+      },
+      "family_id": "hexagon",
+      "variant_id": "hexagon-right",
+      "sha256": "f12ebb4b91f605a325c34d877ac1034f5ed7ca8ad2eb6d844cf5448082da079f"
+    },
+    {
+      "id": "212",
+      "file": "212-a-filled-black-hexagon-with-a-small-white-circular-hole-on-a-white-background.txt",
+      "prompt": "a filled black hexagon with a small white circular hole on a white background",
+      "shape": "hexagon",
+      "style": "hole",
+      "variant": {
+        "name": "upper",
+        "center": [
+          10,
+          8
+        ],
+        "span": 12,
+        "stroke": 1.1
+      },
+      "family_id": "hexagon",
+      "variant_id": "hexagon-upper",
+      "sha256": "453367c4addae58960e457f0081873347ab12898b17e2e7043e33fe1937b517d"
+    },
+    {
+      "id": "213",
+      "file": "213-a-filled-black-five-pointed-star-on-a-white-background.txt",
+      "prompt": "a filled black five-pointed star on a white background",
+      "shape": "star",
+      "style": "filled",
+      "variant": {
+        "name": "large",
+        "center": [
+          10,
+          10
+        ],
+        "span": 15,
+        "stroke": 1.25
+      },
+      "family_id": "star",
+      "variant_id": "star-large",
+      "sha256": "562805a52a5281bae799ce50670742f821065c00edb46015e740191d4e4816aa"
+    },
+    {
+      "id": "214",
+      "file": "214-a-filled-black-five-pointed-star-on-a-white-background.txt",
+      "prompt": "a filled black five-pointed star on a white background",
+      "shape": "star",
+      "style": "filled",
+      "variant": {
+        "name": "small",
+        "center": [
+          10,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.0
+      },
+      "family_id": "star",
+      "variant_id": "star-small",
+      "sha256": "dccaf4cfabffba74d57f6d4da4b30a71bd2d583b786be290143b343c9243a5d3"
+    },
+    {
+      "id": "215",
+      "file": "215-a-filled-black-five-pointed-star-on-a-white-background.txt",
+      "prompt": "a filled black five-pointed star on a white background",
+      "shape": "star",
+      "style": "filled",
+      "variant": {
+        "name": "left",
+        "center": [
+          8,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.4
+      },
+      "family_id": "star",
+      "variant_id": "star-left",
+      "sha256": "35ffd0618edf79eba73a763367100ee4b6fe5f5953018eccad16aa9a02cfcf11"
+    },
+    {
+      "id": "216",
+      "file": "216-a-filled-black-five-pointed-star-on-a-white-background.txt",
+      "prompt": "a filled black five-pointed star on a white background",
+      "shape": "star",
+      "style": "filled",
+      "variant": {
+        "name": "right",
+        "center": [
+          12,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.2
+      },
+      "family_id": "star",
+      "variant_id": "star-right",
+      "sha256": "9225803f9e6a9622eeea481ab3324838a46ff0a5ea609b077d2018b15aa04368"
+    },
+    {
+      "id": "217",
+      "file": "217-a-filled-black-five-pointed-star-on-a-white-background.txt",
+      "prompt": "a filled black five-pointed star on a white background",
+      "shape": "star",
+      "style": "filled",
+      "variant": {
+        "name": "upper",
+        "center": [
+          10,
+          8
+        ],
+        "span": 12,
+        "stroke": 1.1
+      },
+      "family_id": "star",
+      "variant_id": "star-upper",
+      "sha256": "5eae7047b3325617fe06535c12c7369470e9f1a50a884bbf6cda362619a9a127"
+    },
+    {
+      "id": "218",
+      "file": "218-a-black-outline-of-a-five-pointed-star-on-a-white-background.txt",
+      "prompt": "a black outline of a five-pointed star on a white background",
+      "shape": "star",
+      "style": "outline",
+      "variant": {
+        "name": "large",
+        "center": [
+          10,
+          10
+        ],
+        "span": 15,
+        "stroke": 1.25
+      },
+      "family_id": "star",
+      "variant_id": "star-large",
+      "sha256": "e3cb0d00d96525d98b61a943e38197282dcc718f6e7bf9e17420425d77509818"
+    },
+    {
+      "id": "219",
+      "file": "219-a-black-outline-of-a-five-pointed-star-on-a-white-background.txt",
+      "prompt": "a black outline of a five-pointed star on a white background",
+      "shape": "star",
+      "style": "outline",
+      "variant": {
+        "name": "small",
+        "center": [
+          10,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.0
+      },
+      "family_id": "star",
+      "variant_id": "star-small",
+      "sha256": "2f26485abc91caf3c179348658c99081ba9c919567028750cf2c5da414c2bafb"
+    },
+    {
+      "id": "220",
+      "file": "220-a-black-outline-of-a-five-pointed-star-on-a-white-background.txt",
+      "prompt": "a black outline of a five-pointed star on a white background",
+      "shape": "star",
+      "style": "outline",
+      "variant": {
+        "name": "left",
+        "center": [
+          8,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.4
+      },
+      "family_id": "star",
+      "variant_id": "star-left",
+      "sha256": "21928a2299cd36ab57bf12839b76850b2068ffcffb9c43542aa2e3053de573e9"
+    },
+    {
+      "id": "221",
+      "file": "221-a-black-outline-of-a-five-pointed-star-on-a-white-background.txt",
+      "prompt": "a black outline of a five-pointed star on a white background",
+      "shape": "star",
+      "style": "outline",
+      "variant": {
+        "name": "right",
+        "center": [
+          12,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.2
+      },
+      "family_id": "star",
+      "variant_id": "star-right",
+      "sha256": "ec3131996a28c9612d651f18eb092279cf3441289ad386a1808a51743a32cb77"
+    },
+    {
+      "id": "222",
+      "file": "222-a-black-outline-of-a-five-pointed-star-on-a-white-background.txt",
+      "prompt": "a black outline of a five-pointed star on a white background",
+      "shape": "star",
+      "style": "outline",
+      "variant": {
+        "name": "upper",
+        "center": [
+          10,
+          8
+        ],
+        "span": 12,
+        "stroke": 1.1
+      },
+      "family_id": "star",
+      "variant_id": "star-upper",
+      "sha256": "6494fce223adc2fd0221c8f055c395df30ed8c8123bf5b1905dde73fe3a59e31"
+    },
+    {
+      "id": "223",
+      "file": "223-a-white-five-pointed-star-cut-out-of-a-black-background.txt",
+      "prompt": "a white five-pointed star cut out of a black background",
+      "shape": "star",
+      "style": "negative",
+      "variant": {
+        "name": "large",
+        "center": [
+          10,
+          10
+        ],
+        "span": 15,
+        "stroke": 1.25
+      },
+      "family_id": "star",
+      "variant_id": "star-large",
+      "sha256": "96b2686bddc48ab15113476b3225739630df33d606af2b97ba3c13f08f4952e8"
+    },
+    {
+      "id": "224",
+      "file": "224-a-white-five-pointed-star-cut-out-of-a-black-background.txt",
+      "prompt": "a white five-pointed star cut out of a black background",
+      "shape": "star",
+      "style": "negative",
+      "variant": {
+        "name": "small",
+        "center": [
+          10,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.0
+      },
+      "family_id": "star",
+      "variant_id": "star-small",
+      "sha256": "ffdccda34e997f676f8fe4f83ced533998e25d456b23c22439201f35526c5a62"
+    },
+    {
+      "id": "225",
+      "file": "225-a-white-five-pointed-star-cut-out-of-a-black-background.txt",
+      "prompt": "a white five-pointed star cut out of a black background",
+      "shape": "star",
+      "style": "negative",
+      "variant": {
+        "name": "left",
+        "center": [
+          8,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.4
+      },
+      "family_id": "star",
+      "variant_id": "star-left",
+      "sha256": "e0eb866cd4849599bc61cf304c54758849bcdc1a29ae665a81acd7fd9d681461"
+    },
+    {
+      "id": "226",
+      "file": "226-a-white-five-pointed-star-cut-out-of-a-black-background.txt",
+      "prompt": "a white five-pointed star cut out of a black background",
+      "shape": "star",
+      "style": "negative",
+      "variant": {
+        "name": "right",
+        "center": [
+          12,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.2
+      },
+      "family_id": "star",
+      "variant_id": "star-right",
+      "sha256": "189608ccc2dab719b0dde124bbd2a8c8f4660b90104eedd9163f60ff69758e19"
+    },
+    {
+      "id": "227",
+      "file": "227-a-white-five-pointed-star-cut-out-of-a-black-background.txt",
+      "prompt": "a white five-pointed star cut out of a black background",
+      "shape": "star",
+      "style": "negative",
+      "variant": {
+        "name": "upper",
+        "center": [
+          10,
+          8
+        ],
+        "span": 12,
+        "stroke": 1.1
+      },
+      "family_id": "star",
+      "variant_id": "star-upper",
+      "sha256": "28da69b0fb0b360979787152c125c4e7d9770ecb4a521f19ac46c71bab1ddbc8"
+    },
+    {
+      "id": "228",
+      "file": "228-a-white-outline-of-a-five-pointed-star-on-a-black-background.txt",
+      "prompt": "a white outline of a five-pointed star on a black background",
+      "shape": "star",
+      "style": "negative-outline",
+      "variant": {
+        "name": "large",
+        "center": [
+          10,
+          10
+        ],
+        "span": 15,
+        "stroke": 1.25
+      },
+      "family_id": "star",
+      "variant_id": "star-large",
+      "sha256": "76ebbfda06586a9264967e6ba4448673bb83e0591b698f1a9a6edc5e73dbaa27"
+    },
+    {
+      "id": "229",
+      "file": "229-a-white-outline-of-a-five-pointed-star-on-a-black-background.txt",
+      "prompt": "a white outline of a five-pointed star on a black background",
+      "shape": "star",
+      "style": "negative-outline",
+      "variant": {
+        "name": "small",
+        "center": [
+          10,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.0
+      },
+      "family_id": "star",
+      "variant_id": "star-small",
+      "sha256": "4f04eec5c466573ef0cbf04c6951fd308bbc400c4a5c0a15b991ee2e8773bf11"
+    },
+    {
+      "id": "230",
+      "file": "230-a-white-outline-of-a-five-pointed-star-on-a-black-background.txt",
+      "prompt": "a white outline of a five-pointed star on a black background",
+      "shape": "star",
+      "style": "negative-outline",
+      "variant": {
+        "name": "left",
+        "center": [
+          8,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.4
+      },
+      "family_id": "star",
+      "variant_id": "star-left",
+      "sha256": "8a23c740e3df334cc28a9190739a29c9319c3fc65e4ab95b8a6cf3cf9e0104eb"
+    },
+    {
+      "id": "231",
+      "file": "231-a-white-outline-of-a-five-pointed-star-on-a-black-background.txt",
+      "prompt": "a white outline of a five-pointed star on a black background",
+      "shape": "star",
+      "style": "negative-outline",
+      "variant": {
+        "name": "right",
+        "center": [
+          12,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.2
+      },
+      "family_id": "star",
+      "variant_id": "star-right",
+      "sha256": "2e5324e26943bbc6ab1f5109445acfa63cbab44626b2973e7dae755e11ca5aab"
+    },
+    {
+      "id": "232",
+      "file": "232-a-white-outline-of-a-five-pointed-star-on-a-black-background.txt",
+      "prompt": "a white outline of a five-pointed star on a black background",
+      "shape": "star",
+      "style": "negative-outline",
+      "variant": {
+        "name": "upper",
+        "center": [
+          10,
+          8
+        ],
+        "span": 12,
+        "stroke": 1.1
+      },
+      "family_id": "star",
+      "variant_id": "star-upper",
+      "sha256": "0ffe343f9243ea838532d55894731077bfa8490181dc18169f8f06c84b512a8d"
+    },
+    {
+      "id": "233",
+      "file": "233-a-filled-black-five-pointed-star-with-a-small-white-circular-hole-on-a-white-background.txt",
+      "prompt": "a filled black five-pointed star with a small white circular hole on a white background",
+      "shape": "star",
+      "style": "hole",
+      "variant": {
+        "name": "large",
+        "center": [
+          10,
+          10
+        ],
+        "span": 15,
+        "stroke": 1.25
+      },
+      "family_id": "star",
+      "variant_id": "star-large",
+      "sha256": "45dc48322a1f7541d94f505d387c4f134764da72aaa5e8c888b76e931603bae2"
+    },
+    {
+      "id": "234",
+      "file": "234-a-filled-black-five-pointed-star-with-a-small-white-circular-hole-on-a-white-background.txt",
+      "prompt": "a filled black five-pointed star with a small white circular hole on a white background",
+      "shape": "star",
+      "style": "hole",
+      "variant": {
+        "name": "small",
+        "center": [
+          10,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.0
+      },
+      "family_id": "star",
+      "variant_id": "star-small",
+      "sha256": "8381fbed64250430b2cffa804afbd550871708d2d4d57ec42d91e1dfce99c2ed"
+    },
+    {
+      "id": "235",
+      "file": "235-a-filled-black-five-pointed-star-with-a-small-white-circular-hole-on-a-white-background.txt",
+      "prompt": "a filled black five-pointed star with a small white circular hole on a white background",
+      "shape": "star",
+      "style": "hole",
+      "variant": {
+        "name": "left",
+        "center": [
+          8,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.4
+      },
+      "family_id": "star",
+      "variant_id": "star-left",
+      "sha256": "f85525477af9e1bc4cc63854ae992b26e82aedc4b8c65b354c83d5ac6c757603"
+    },
+    {
+      "id": "236",
+      "file": "236-a-filled-black-five-pointed-star-with-a-small-white-circular-hole-on-a-white-background.txt",
+      "prompt": "a filled black five-pointed star with a small white circular hole on a white background",
+      "shape": "star",
+      "style": "hole",
+      "variant": {
+        "name": "right",
+        "center": [
+          12,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.2
+      },
+      "family_id": "star",
+      "variant_id": "star-right",
+      "sha256": "6c06ed9cc3ab771660eb2a7e608f9167e72b5b1251103b685067a1c5bec53a3e"
+    },
+    {
+      "id": "237",
+      "file": "237-a-filled-black-five-pointed-star-with-a-small-white-circular-hole-on-a-white-background.txt",
+      "prompt": "a filled black five-pointed star with a small white circular hole on a white background",
+      "shape": "star",
+      "style": "hole",
+      "variant": {
+        "name": "upper",
+        "center": [
+          10,
+          8
+        ],
+        "span": 12,
+        "stroke": 1.1
+      },
+      "family_id": "star",
+      "variant_id": "star-upper",
+      "sha256": "f793c78c9e21e141baf8366eb682a28dd4b655f1ff4f93caa994d86eb859c1c4"
+    },
+    {
+      "id": "238",
+      "file": "238-a-filled-black-cross-on-a-white-background.txt",
+      "prompt": "a filled black cross on a white background",
+      "shape": "cross",
+      "style": "filled",
+      "variant": {
+        "name": "large",
+        "center": [
+          10,
+          10
+        ],
+        "span": 15,
+        "stroke": 1.25
+      },
+      "family_id": "cross",
+      "variant_id": "cross-large",
+      "sha256": "611180d43e255fa2256e5249bfdd39b6dba5ce089e0ae90e06ab1e9b8ee04117"
+    },
+    {
+      "id": "239",
+      "file": "239-a-filled-black-cross-on-a-white-background.txt",
+      "prompt": "a filled black cross on a white background",
+      "shape": "cross",
+      "style": "filled",
+      "variant": {
+        "name": "small",
+        "center": [
+          10,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.0
+      },
+      "family_id": "cross",
+      "variant_id": "cross-small",
+      "sha256": "701f26b6f0624205d5a1196b862df08e14a2608e003d7268c7471a648bd14184"
+    },
+    {
+      "id": "240",
+      "file": "240-a-filled-black-cross-on-a-white-background.txt",
+      "prompt": "a filled black cross on a white background",
+      "shape": "cross",
+      "style": "filled",
+      "variant": {
+        "name": "left",
+        "center": [
+          8,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.4
+      },
+      "family_id": "cross",
+      "variant_id": "cross-left",
+      "sha256": "7dd2b83f3e9f571d1cebdeb5ec7c91cffff9cf35c06c2cd1e6c84787f8d6ba70"
+    },
+    {
+      "id": "241",
+      "file": "241-a-filled-black-cross-on-a-white-background.txt",
+      "prompt": "a filled black cross on a white background",
+      "shape": "cross",
+      "style": "filled",
+      "variant": {
+        "name": "right",
+        "center": [
+          12,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.2
+      },
+      "family_id": "cross",
+      "variant_id": "cross-right",
+      "sha256": "4734698d9ca4960decbd76f4e1c935d2f66ceb18f6c208d0fe07a46df9077bb7"
+    },
+    {
+      "id": "242",
+      "file": "242-a-filled-black-cross-on-a-white-background.txt",
+      "prompt": "a filled black cross on a white background",
+      "shape": "cross",
+      "style": "filled",
+      "variant": {
+        "name": "upper",
+        "center": [
+          10,
+          8
+        ],
+        "span": 12,
+        "stroke": 1.1
+      },
+      "family_id": "cross",
+      "variant_id": "cross-upper",
+      "sha256": "1927ac870d8156879b031cde16a86909ed359373e84f30d8ab6d4b7e619164a7"
+    },
+    {
+      "id": "243",
+      "file": "243-a-black-outline-of-a-cross-on-a-white-background.txt",
+      "prompt": "a black outline of a cross on a white background",
+      "shape": "cross",
+      "style": "outline",
+      "variant": {
+        "name": "large",
+        "center": [
+          10,
+          10
+        ],
+        "span": 15,
+        "stroke": 1.25
+      },
+      "family_id": "cross",
+      "variant_id": "cross-large",
+      "sha256": "0a4b8f96519c8749178137ca377dc906158cbac5c4f8335cb1c1e0b6e4a3ef67"
+    },
+    {
+      "id": "244",
+      "file": "244-a-black-outline-of-a-cross-on-a-white-background.txt",
+      "prompt": "a black outline of a cross on a white background",
+      "shape": "cross",
+      "style": "outline",
+      "variant": {
+        "name": "small",
+        "center": [
+          10,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.0
+      },
+      "family_id": "cross",
+      "variant_id": "cross-small",
+      "sha256": "0030f8415310d9228e9ea49fa0e53a76a7b78d54233ad2a700db02c531ecd157"
+    },
+    {
+      "id": "245",
+      "file": "245-a-black-outline-of-a-cross-on-a-white-background.txt",
+      "prompt": "a black outline of a cross on a white background",
+      "shape": "cross",
+      "style": "outline",
+      "variant": {
+        "name": "left",
+        "center": [
+          8,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.4
+      },
+      "family_id": "cross",
+      "variant_id": "cross-left",
+      "sha256": "c25d5a0797686d0bc853250aaa8d1e7e6f57e40ec63420465da7e917ace3d82b"
+    },
+    {
+      "id": "246",
+      "file": "246-a-black-outline-of-a-cross-on-a-white-background.txt",
+      "prompt": "a black outline of a cross on a white background",
+      "shape": "cross",
+      "style": "outline",
+      "variant": {
+        "name": "right",
+        "center": [
+          12,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.2
+      },
+      "family_id": "cross",
+      "variant_id": "cross-right",
+      "sha256": "c571c0e9d817fddc51840a20c2d845f1add7e3ff7e63c9781e878157c74f38c5"
+    },
+    {
+      "id": "247",
+      "file": "247-a-black-outline-of-a-cross-on-a-white-background.txt",
+      "prompt": "a black outline of a cross on a white background",
+      "shape": "cross",
+      "style": "outline",
+      "variant": {
+        "name": "upper",
+        "center": [
+          10,
+          8
+        ],
+        "span": 12,
+        "stroke": 1.1
+      },
+      "family_id": "cross",
+      "variant_id": "cross-upper",
+      "sha256": "c344c73ff73dbdf8127d35f542cc12705adc9ed1dbffd2a65cc6e99f69a22242"
+    },
+    {
+      "id": "248",
+      "file": "248-a-white-cross-cut-out-of-a-black-background.txt",
+      "prompt": "a white cross cut out of a black background",
+      "shape": "cross",
+      "style": "negative",
+      "variant": {
+        "name": "large",
+        "center": [
+          10,
+          10
+        ],
+        "span": 15,
+        "stroke": 1.25
+      },
+      "family_id": "cross",
+      "variant_id": "cross-large",
+      "sha256": "ada92ba661811e35668e90c32f65189084870592610a234cd85e6eda0096fd61"
+    },
+    {
+      "id": "249",
+      "file": "249-a-white-cross-cut-out-of-a-black-background.txt",
+      "prompt": "a white cross cut out of a black background",
+      "shape": "cross",
+      "style": "negative",
+      "variant": {
+        "name": "small",
+        "center": [
+          10,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.0
+      },
+      "family_id": "cross",
+      "variant_id": "cross-small",
+      "sha256": "13210eed148850265f47ee14372b4bc9753e8aa980ef7d18994c69c9c704b6ec"
+    },
+    {
+      "id": "250",
+      "file": "250-a-white-cross-cut-out-of-a-black-background.txt",
+      "prompt": "a white cross cut out of a black background",
+      "shape": "cross",
+      "style": "negative",
+      "variant": {
+        "name": "left",
+        "center": [
+          8,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.4
+      },
+      "family_id": "cross",
+      "variant_id": "cross-left",
+      "sha256": "2d20f45f6b943c65e93da5965b0dfc833ebe2f0f5f6902fd12326e817b764dc6"
+    },
+    {
+      "id": "251",
+      "file": "251-a-white-cross-cut-out-of-a-black-background.txt",
+      "prompt": "a white cross cut out of a black background",
+      "shape": "cross",
+      "style": "negative",
+      "variant": {
+        "name": "right",
+        "center": [
+          12,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.2
+      },
+      "family_id": "cross",
+      "variant_id": "cross-right",
+      "sha256": "42a283218c266ff80851a397726eb9abe991daa0a39f40bdb0a73ded206dcb3b"
+    },
+    {
+      "id": "252",
+      "file": "252-a-white-cross-cut-out-of-a-black-background.txt",
+      "prompt": "a white cross cut out of a black background",
+      "shape": "cross",
+      "style": "negative",
+      "variant": {
+        "name": "upper",
+        "center": [
+          10,
+          8
+        ],
+        "span": 12,
+        "stroke": 1.1
+      },
+      "family_id": "cross",
+      "variant_id": "cross-upper",
+      "sha256": "f696434509d0e4c73bcc43f3e3d391abda60aaf418f941deb148fd5d3e00c789"
+    },
+    {
+      "id": "253",
+      "file": "253-a-white-outline-of-a-cross-on-a-black-background.txt",
+      "prompt": "a white outline of a cross on a black background",
+      "shape": "cross",
+      "style": "negative-outline",
+      "variant": {
+        "name": "large",
+        "center": [
+          10,
+          10
+        ],
+        "span": 15,
+        "stroke": 1.25
+      },
+      "family_id": "cross",
+      "variant_id": "cross-large",
+      "sha256": "5cedd580eece922dcf75391403e52d32c015f558a480d4c262e67703bd0fad03"
+    },
+    {
+      "id": "254",
+      "file": "254-a-white-outline-of-a-cross-on-a-black-background.txt",
+      "prompt": "a white outline of a cross on a black background",
+      "shape": "cross",
+      "style": "negative-outline",
+      "variant": {
+        "name": "small",
+        "center": [
+          10,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.0
+      },
+      "family_id": "cross",
+      "variant_id": "cross-small",
+      "sha256": "fde7b34a3f0a1ba2a65bb493031c284d17d3157a67c2e8bf1903fcf3d318fe42"
+    },
+    {
+      "id": "255",
+      "file": "255-a-white-outline-of-a-cross-on-a-black-background.txt",
+      "prompt": "a white outline of a cross on a black background",
+      "shape": "cross",
+      "style": "negative-outline",
+      "variant": {
+        "name": "left",
+        "center": [
+          8,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.4
+      },
+      "family_id": "cross",
+      "variant_id": "cross-left",
+      "sha256": "764f5f864adfdb1b67a5abe26bb91184438544d1596ecbd9071da43fcd3a1024"
+    },
+    {
+      "id": "256",
+      "file": "256-a-white-outline-of-a-cross-on-a-black-background.txt",
+      "prompt": "a white outline of a cross on a black background",
+      "shape": "cross",
+      "style": "negative-outline",
+      "variant": {
+        "name": "right",
+        "center": [
+          12,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.2
+      },
+      "family_id": "cross",
+      "variant_id": "cross-right",
+      "sha256": "c5b12897e9f94c9ed032e0ecacfae4a9c5cae202f88b778c5ccfbe9f9c5944f1"
+    },
+    {
+      "id": "257",
+      "file": "257-a-white-outline-of-a-cross-on-a-black-background.txt",
+      "prompt": "a white outline of a cross on a black background",
+      "shape": "cross",
+      "style": "negative-outline",
+      "variant": {
+        "name": "upper",
+        "center": [
+          10,
+          8
+        ],
+        "span": 12,
+        "stroke": 1.1
+      },
+      "family_id": "cross",
+      "variant_id": "cross-upper",
+      "sha256": "b61d4981174cd2ce843d48d7dcb54e899bd41f63324bd1915daccec6bdf8f4a1"
+    },
+    {
+      "id": "258",
+      "file": "258-a-filled-black-cross-with-a-small-white-circular-hole-on-a-white-background.txt",
+      "prompt": "a filled black cross with a small white circular hole on a white background",
+      "shape": "cross",
+      "style": "hole",
+      "variant": {
+        "name": "large",
+        "center": [
+          10,
+          10
+        ],
+        "span": 15,
+        "stroke": 1.25
+      },
+      "family_id": "cross",
+      "variant_id": "cross-large",
+      "sha256": "2960d4394e4caee18ce10db3c9648996aefe9e449033d4625cf1aa6c1b752199"
+    },
+    {
+      "id": "259",
+      "file": "259-a-filled-black-cross-with-a-small-white-circular-hole-on-a-white-background.txt",
+      "prompt": "a filled black cross with a small white circular hole on a white background",
+      "shape": "cross",
+      "style": "hole",
+      "variant": {
+        "name": "small",
+        "center": [
+          10,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.0
+      },
+      "family_id": "cross",
+      "variant_id": "cross-small",
+      "sha256": "8534add82d974beab1bfc89758054adcdfc96012840738219e55c70e0adf40d2"
+    },
+    {
+      "id": "260",
+      "file": "260-a-filled-black-cross-with-a-small-white-circular-hole-on-a-white-background.txt",
+      "prompt": "a filled black cross with a small white circular hole on a white background",
+      "shape": "cross",
+      "style": "hole",
+      "variant": {
+        "name": "left",
+        "center": [
+          8,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.4
+      },
+      "family_id": "cross",
+      "variant_id": "cross-left",
+      "sha256": "9011bfbf311e8e0caa1c85b3abb14cd05341bc0d15fe9217a84839ecf8fb1ea4"
+    },
+    {
+      "id": "261",
+      "file": "261-a-filled-black-cross-with-a-small-white-circular-hole-on-a-white-background.txt",
+      "prompt": "a filled black cross with a small white circular hole on a white background",
+      "shape": "cross",
+      "style": "hole",
+      "variant": {
+        "name": "right",
+        "center": [
+          12,
+          10
+        ],
+        "span": 12,
+        "stroke": 1.2
+      },
+      "family_id": "cross",
+      "variant_id": "cross-right",
+      "sha256": "6aaef4f7ee67d4701529a47903fe45b2641d788f98b27690bf875bf5a3eee1d6"
+    },
+    {
+      "id": "262",
+      "file": "262-a-filled-black-cross-with-a-small-white-circular-hole-on-a-white-background.txt",
+      "prompt": "a filled black cross with a small white circular hole on a white background",
+      "shape": "cross",
+      "style": "hole",
+      "variant": {
+        "name": "upper",
+        "center": [
+          10,
+          8
+        ],
+        "span": 12,
+        "stroke": 1.1
+      },
+      "family_id": "cross",
+      "variant_id": "cross-upper",
+      "sha256": "bf3e1f32aad6ec89a7dd550ff6ed884a379936fe32d1a04f52bc0de126fb0d08"
+    }
+  ]
+}

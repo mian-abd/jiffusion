@@ -1,7 +1,32 @@
 MVP validation — September 26, 2026
 ==================================
 
-Latest experiment: **required mutations with 16, 8, and 2 choices per call**. Each run used a 20×20 grid, 500 sequential Jev calls, prompt `a circle`, seed 0, and the same coarse binary initialization and shrinking patch schedule. The unchanged current frame is no longer a candidate. The CLI default remains 16 choices; 8 and 2 are explicit experiments.
+Latest prompt experiment: [DSPy instruction optimization](#dspy-instruction-optimization-2026-09-26). The candidate improved validation but did not improve the held-out test, so the original production instruction remains active.
+
+Earlier generation experiments: **progressive resolution and an explicit circle prompt, using ASCII art** (`binary-patches-v2`, `ascii-dot-hash-v1`). Tested all four combinations with seeds 0, 1, and 2: 12 live runs, each with 500 sequential calls and exactly two choices. Every proposed mutation flips one pixel at the current resolution. The two resolution modes ran concurrently, with calls inside each run remaining sequential.
+
+- Fixed resolution: 20×20 throughout, initialized from an enlarged random 5×5 grid.
+- Progressive resolution: 150 steps at 5×5, 150 at 10×10, and 200 at 20×20. Enlarge the previous winner before generating mutations at each boundary.
+- Short target: `a circle`.
+- Explicit target: `One filled black disk on a white background, with a smooth round boundary.`
+- Both modes use the same ASCII encoding (`.` white, `#` black), legend, selection question, and one-pixel mutations. This comparison isolates the resolution schedule and target wording. Earlier Unicode runs also differed in encoding and/or mutation schedule.
+
+| Resolution | Target | Completed runs | Mean wall time per run | Mean input tokens per run | First option selected |
+| --- | --- | --- | --- | --- | --- |
+| Fixed | Short | 3/3 | 54.89 s | 361,342 | 436/1,500 |
+| Fixed | Explicit | 3/3 | 55.99 s | 366,337 | 131/1,500 |
+| Progressive | Short | 3/3 | 55.86 s | 282,196 | 658/1,500 |
+| Progressive | Explicit | 3/3 | 55.62 s | 288,027 | 569/1,500 |
+
+**None of the 12 final images shows a clear circle.** Intermediate images retain broad regions during coarse phases, but the final frames remain fragmented. Visual inspection does not show a clear advantage over the six corresponding random-selector controls. Progressive resolution reduced input-token usage by roughly 22%, without producing the target shape. The explicit prompt did not visibly solve the problem. The fixed-resolution explicit runs selected the second option in 1,369/1,500 calls despite shuffled candidates; this remains a reason to test ordering separately.
+
+All 18 runs, including random controls, completed. The logs were checked for exact resolution boundaries, binary ASCII grids, exactly two candidates, and exactly one changed pixel for every candidate after initialization, relative to the enlarged parent at transitions. No unchanged parent was offered. All 6,000 live responses reported `jev-1.13.0`. **12 offline tests passed**, and both CLI prompt modes were checked against the constants.
+
+The grid search's authored prompt text is centralized in [prompts.py](prompts.py): both target prompts, the ASCII legend, and the Choice instruction. Every run manifest preserves the exact text used. These runs used the binary dot/hash legend; the later image converter extends the current legend to describe all five brightness levels. Use `--explicit-circle` to select the detailed target.
+
+Local artifacts: [all final frames beside random controls](runs/ascii-experiments-finals.png), [seed 0 progress](runs/ascii-experiments-progress.png), [per-run summary](runs/ascii-experiments-summary.json), [progressive explicit seed 0 manifest](runs/ascii-progressive-explicit-seed0/run.json), and [its exact candidates and decisions](runs/ascii-progressive-explicit-seed0/steps.jsonl). The README contains commands for all four configurations.
+
+Earlier experiment: **required mutations with 16, 8, and 2 choices per call**. Each run used a 20×20 grid, 500 sequential Jev calls, prompt `a circle`, seed 0, and the same coarse binary initialization and shrinking patch schedule. The unchanged current frame is no longer a candidate. The CLI default remains 16 choices; 8 and 2 are explicit experiments.
 
 | Choices | Steps | Wall time | Input tokens | Unchanged transitions | Selected first option |
 | --- | --- | --- | --- | --- | --- |
@@ -78,3 +103,43 @@ Local artifacts from this validation (under Git-ignored `runs/`):
 - [Recognition results](runs/recognition/results.json)
 
 Reproduce a run with `uv run jiffusion.py --seed 0`. The random generator is seeded, but remote model decisions can change. Current scope is the simple working experiment; generating a recognizable duck remains unproven.
+## DSPy instruction optimization, 2026-09-26
+
+The first live DSPy COPRO run used `openai/gpt-6-astra` through Vibe Proxy at
+`http://localhost:8317/v1` to propose shared selection instructions, and
+`jev-1.13.0` to evaluate them. Breadth 2, depth 2, corruption seed 0, four
+evaluation workers. Three generated proposals plus the original instruction
+were considered; one proposal failed the field-reference guard and made no Jev
+calls. The run made 3,750 Jev evaluation calls.
+
+| Split | Original | Validation-selected candidate |
+| --- | --- | --- |
+| Training: five families, 750 comparisons | 659/750 (87.9%) | 671/750 (89.5%) |
+| Validation: circle and ellipse, 300 comparisons | 271/300 (90.3%) | 274/300 (91.3%) |
+| Test: square, rectangle, diamond, 450 comparisons | 408/450 (90.7%) | 406/450 (90.2%) |
+
+The candidate was frozen using training/validation before the test ran. No
+drawings, target names, or demonstrations were sent to the proposal model. The
+selected instruction contains general spatial/tonal comparison guidance and no
+named shapes or special cases. The baseline and candidate both scored 150/150 on
+the held-out local-damage comparisons; the test difference came from style
+comparisons (121/150 versus 119/150). Both-orders-correct accuracy changed from
+89.8% to 88.0% on the test.
+
+This run does **not** establish a generalization gain. After seeing this result,
+we restored the original production instruction and added a deployment veto:
+`--apply` now requires gains on both validation and the final test. This veto was
+added after the first run, not specified before it. The test was not used for any
+further prompt search. Future tuning should use new held-out data or a separate
+evaluation protocol, rather than repeatedly tuning against this test.
+
+The preferences are synthetic: lower nested pixel damage, or the requested style
+versus a mismatched style of the same shape. They are not human semantic labels;
+source variants and mirrored candidate orders are correlated. This evaluation
+uses two choices and does not demonstrate convergence of the random-mutation
+generation loop.
+
+The [saved report](dataset/dspy-vibe-001-report.json) contains the exact proposed
+instructions, family/style/damage breakdowns, dataset hash, and configuration.
+Detailed requests, fixed splits, and the candidate `prompts.py` remain under
+`runs/dspy-vibe-001/` (ignored by Git). The full offline suite has 30 passing tests.

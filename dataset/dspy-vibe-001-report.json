@@ -1,0 +1,143 @@
+{
+  "optimizer": "DSPy COPRO, instruction only",
+  "dspy_version": "3.2.1",
+  "model": "jev-1.13.0",
+  "proposal_model": "openai/gpt-6-astra",
+  "families": {
+    "train": [
+      "triangle",
+      "pentagon",
+      "hexagon",
+      "star",
+      "cross"
+    ],
+    "validation": [
+      "circle",
+      "ellipse"
+    ],
+    "test": [
+      "square",
+      "rectangle",
+      "diamond"
+    ]
+  },
+  "split_sizes": {
+    "train": 750,
+    "validation": 300,
+    "test": 450
+  },
+  "instructions": "Select the candidate whose rendered image most closely resembles `prompt`. Decode each ASCII grid using `legend`: characters encode pixel brightness, not textual meaning. Preserve row and column positions and read the entire grid as a two-dimensional image.\n\nIdentify the requested subject, composition, background, and visual style, including any explicit spatial or tonal requirements. Compare all candidates against those requirements. Assess overall organization and recognizable structure, then inspect boundaries, connected regions, internal details, and brightness relationships. Use both depicted regions and the spaces between them. Distinguish meaningful visual evidence from incidental character patterns; do not let a small local match outweigh a contradictory overall image. Judge only properties supported by the prompt, without inventing requirements or preferring an ID or ordering.\n\nChoose the strongest overall visual match, even if every candidate is imperfect. Return only its exact candidate ID, with no explanation.",
+  "improved_on_validation": true,
+  "validation_baseline": {
+    "accuracy": 0.9033,
+    "comparisons": 300,
+    "both_orders_correct": 0.8733333333333333,
+    "breakdown": {
+      "family:circle": 0.9133333333333333,
+      "family:ellipse": 0.8933333333333333,
+      "kind:heavy_damage": 0.96,
+      "kind:local_damage": 0.96,
+      "kind:style": 0.79,
+      "order:0": 0.9,
+      "order:1": 0.9066666666666666,
+      "style:filled": 1.0,
+      "style:hole": 0.9833333333333333,
+      "style:negative": 0.9666666666666667,
+      "style:negative-outline": 0.5833333333333334,
+      "style:outline": 0.9833333333333333
+    }
+  },
+  "validation_candidate": {
+    "accuracy": 0.9133,
+    "comparisons": 300,
+    "both_orders_correct": 0.8866666666666667,
+    "breakdown": {
+      "family:circle": 0.92,
+      "family:ellipse": 0.9066666666666666,
+      "kind:heavy_damage": 0.98,
+      "kind:local_damage": 0.98,
+      "kind:style": 0.78,
+      "order:0": 0.9133333333333333,
+      "order:1": 0.9133333333333333,
+      "style:filled": 1.0,
+      "style:hole": 0.9666666666666667,
+      "style:negative": 0.9666666666666667,
+      "style:negative-outline": 0.65,
+      "style:outline": 0.9833333333333333
+    }
+  },
+  "test_baseline": {
+    "accuracy": 0.9067000000000001,
+    "comparisons": 450,
+    "both_orders_correct": 0.8977777777777778,
+    "breakdown": {
+      "family:diamond": 0.9066666666666666,
+      "family:rectangle": 0.88,
+      "family:square": 0.9333333333333333,
+      "kind:heavy_damage": 0.9133333333333333,
+      "kind:local_damage": 1.0,
+      "kind:style": 0.8066666666666666,
+      "order:0": 0.9022222222222223,
+      "order:1": 0.9111111111111111,
+      "style:filled": 0.9111111111111111,
+      "style:hole": 1.0,
+      "style:negative": 0.9888888888888889,
+      "style:negative-outline": 0.6333333333333333,
+      "style:outline": 1.0
+    }
+  },
+  "test_selected": {
+    "accuracy": 0.9022,
+    "comparisons": 450,
+    "both_orders_correct": 0.88,
+    "breakdown": {
+      "family:diamond": 0.9066666666666666,
+      "family:rectangle": 0.9,
+      "family:square": 0.9,
+      "kind:heavy_damage": 0.9133333333333333,
+      "kind:local_damage": 1.0,
+      "kind:style": 0.7933333333333333,
+      "order:0": 0.88,
+      "order:1": 0.9244444444444444,
+      "style:filled": 0.9333333333333333,
+      "style:hole": 0.9888888888888889,
+      "style:negative": 1.0,
+      "style:negative-outline": 0.6,
+      "style:outline": 0.9888888888888889
+    }
+  },
+  "jev_calls": 3750,
+  "proposals": [
+    {
+      "instructions": "Select the candidate whose rendered image most closely resembles `prompt`. Decode each ASCII grid using `legend`: characters encode pixel brightness, not textual meaning. Preserve row and column positions and read the entire grid as a two-dimensional image.\n\nIdentify the requested subject, composition, background, and visual style, including any explicit spatial or tonal requirements. Compare all candidates against those requirements. Assess overall organization and recognizable structure, then inspect boundaries, connected regions, internal details, and brightness relationships. Use both depicted regions and the spaces between them. Distinguish meaningful visual evidence from incidental character patterns; do not let a small local match outweigh a contradictory overall image. Judge only properties supported by the prompt, without inventing requirements or preferring an ID or ordering.\n\nChoose the strongest overall visual match, even if every candidate is imperfect. Return only its exact candidate ID, with no explanation.",
+      "training_accuracy": 0.8946999999999999,
+      "valid": true
+    },
+    {
+      "instructions": "Select the candidate that best depicts `prompt`. Decode `candidates` with `legend` as pixel brightness, not text. Preserve rows, columns, and relative brightness; view each complete grid as a two-dimensional image.\n\nEstablish the prompt's defining visual requirements: subject, arrangement, appearance, background, and style. Separate explicit requirements from unspecified properties. Read each image globally before inspecting details: locate coherent regions, their boundaries, internal structure, and intervening spaces. Compare their relationships and tonal organization with the requested depiction. Judge recognizable visual structure rather than character patterns or isolated suggestive patches.\n\nCompare all candidates using the same requirements. For close contenders, identify the visual differences that most affect fidelity to the prompt; weigh defining evidence and clear contradictions more than generic resemblance or decorative detail. Recheck the whole image before deciding. Do not invent requirements or favor an ID, ordering, or visual property not justified by the prompt.\n\nChoose the strongest overall match even if none is perfect. Return only the exact candidate ID.",
+      "training_accuracy": 0.888,
+      "valid": true
+    },
+    {
+      "instructions": "Which ASCII-art grid in `candidates` best depicts `prompt`? Choose the closest visual resemblance, even if all candidates are poor.",
+      "training_accuracy": 0.8787,
+      "valid": true
+    },
+    {
+      "instructions": "Select the candidate that best visually depicts `prompt`. Decode every grid with `legend` as a two-dimensional brightness image, preserving rows, columns, and relative tones. Characters are pixels, not text.\n\nFirst establish what the prompt requires: subject, arrangement, background, style, and explicit visual attributes. Examine each whole image before interpreting details. Compare the placement and relationships of regions, boundaries, internal structure, tonal contrasts, and intervening spaces. Consider foreground and background together; do not assume which brightness represents either.\n\nForm a coherent reading of each candidate, then test it against the prompt rather than accepting an isolated suggestive feature. Give greatest weight to evidence that distinguishes the requested image from plausible alternatives. Weigh both supporting features and contradictions; do not invent missing details. Recheck the strongest contenders at both overall and local scales. Prefer the match supported by the complete image, not generic neatness or complexity. All preferences must follow from the prompt.\n\nChoose the closest match even if none is perfect. Return only its exact candidate ID.",
+      "training_accuracy": 0.0,
+      "valid": false
+    }
+  ],
+  "limitations": "Synthetic reconstruction/style preferences, not human semantic judgments. Mirrored orders and variants are correlated. Unseen primitive families are not arbitrary clipart. Pairwise accuracy does not establish success from random noise or with larger candidate sets.",
+  "deployment_approved": false,
+  "deployment_note": "After inspecting the final test, we withheld deployment and restored the original instruction. This veto was added after this first run; it is now enforced by --apply. No further prompt tuning used this test.",
+  "run_config": {
+    "breadth": 2,
+    "depth": 2,
+    "seed": 0,
+    "threads": 4,
+    "proposal_base_url": "http://localhost:8317/v1"
+  },
+  "dataset_sha256": "bd9d5098bdc62361de34b1ccd7b0a22b4eab731c699e489c98476ee712a8ae45"
+}
