@@ -5,8 +5,64 @@ dist-ssr/
 .env
 .env.*
 !.env.example
-.venv/
+
+# Python bytecode / native extensions
 __pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Python virtual environments
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Python packaging / installation
+build/
+develop-eggs/
+eggs/
+.eggs/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+pip-wheel-metadata/
+wheelhouse/
+pip-log.txt
+pip-delete-this-directory.txt
+.pdm-python
+.pdm-build/
+__pypackages__/
+
+# Python tests / coverage
+.pytest_cache/
+.tox/
+.nox/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+
+# Python type checkers / linters
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyre/
+.pytype/
+.ruff_cache/
+
+# Python notebooks / documentation / debugging
+.ipynb_checkpoints/
+docs/_build/
+cython_debug/
+
+# Experiment outputs
 runs/
 
 # OS / editor
