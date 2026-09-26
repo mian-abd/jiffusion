@@ -7,18 +7,19 @@ import random
 from dotenv import load_dotenv
 from typesafe_sdk import TypeSafeClient
 
-from jiffusion import jev_pick, random_grid, render
+from jiffusion import jev_pick, render
 
 
 def main():
     load_dotenv(Path(__file__).with_name(".env"))
+    noise_rng = random.Random(0)
     shapes = {
         "circle": [[4 if (x - 15.5)**2 + (y - 15.5)**2 <= 100 else 0
                     for x in range(32)] for y in range(32)],
         "cross": [[4 if abs(x - 15.5) < 2 or abs(y - 15.5) < 2 else 0
                    for x in range(32)] for y in range(32)],
         "stripes": [[4 if x // 4 % 2 else 0 for x in range(32)] for _ in range(32)],
-        "noise": random_grid(32, random.Random(0)),
+        "noise": [[noise_rng.choice((0, 4)) for _ in range(32)] for _ in range(32)],
     }
     prompts = {"circle": "a dark circle on a white background",
                "cross": "a dark cross on a white background",

@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "api": "uv run server.py",
     "build": "vite build",
     "preview": "vite preview"
   },

@@ -1,63 +1,66 @@
 # Jiffusion
 
-Generate coarse black-and-white grids, ask Jev which looks most like **a circle**, edit a small square on the winner, and repeat. One synchronous `for` loop; one Choice request per step.
+**Jev + gif + diffusion.** Start from pure grayscale noise and let [Jev](https://docs.typesafe.ai) steer it into a picture of your prompt. No image model: a random generator proposes edits, Jev judges them, code applies the policy.
+
+```
+noise ─▶ ░▒▓ fades ─▶ picture      Jev decides which proposal looks most like the prompt at every step
+```
+
+## Run it
 
 ```sh
 uv sync
-# Put TYPESAFE_API_KEY=... in .env (see .env.example).
-uv run jiffusion.py
+cp .env.example .env            # put TYPESAFE_API_KEY=... in .env
+uv run jiffusion.py "a circle"  # CLI run, saved under runs/
 ```
 
-Defaults: **20×20 pixels, 500 steps, 16 new candidates per step**, seed `0`, prompt `"a circle"`, model `jev-1.13.0`. Use `--steps` for a shorter run. The script automatically loads this project's `.env`; existing environment variables take precedence. `.env` and generated runs are ignored by Git.
-
-Each run gets a new directory under `runs/`:
-
-- `frames.md`: all selected frames as whitespace-preserving code blocks.
-- `final.svg`: the last frame rendered with square pixels, white through black.
-- `final.txt`: the last frame using spaces (white) and `█` (black).
-- `steps.jsonl`: every candidate, patch size, selected index, changed-pixel count, Jev answer, actual model, usage, and request duration.
-- `run.json`: configuration, the full schedule, completion status, and elapsed time.
-
-The first step selects among random 5×5 black-and-white grids enlarged to 20×20, so the starting images have broad regions. Later steps paint one square uniformly black or white. The chosen color differs from the pixel at the square's top-left corner, guaranteeing a real edit. Each proposal starts from the same current frame, and candidate order is shuffled. **The unchanged frame is never offered: every iteration after initialization must select a mutation.** There are exactly 16 choices per call by default, including for the random baseline.
-
-| Iterations (500-step run) | New candidate edits |
-| --- | --- |
-| 1 | Independent coarse random grids |
-| 2–50 | Paint one 4×4 square (1–16 changed pixels) |
-| 51–200 | Paint one 2×2 square (1–4 changed pixels) |
-| 201–500 | Flip one pixel |
-
-The phases scale with `--steps`: 10% for coarse edits, another 30% for medium edits, then 60% for fine edits. Each iteration makes one selection call in series, without sending earlier frames. The generator has no circle template or shape-specific rules. No annealing or scheduler framework.
+UI (two terminals):
 
 ```sh
-uv run jiffusion.py "a circle" --seed 1 --output runs/circle-seed1
-uv run jiffusion.py "a dark circle" --size 16 --steps 12 --candidates 8
-uv run jiffusion.py --selector random --output runs/random-baseline
+npm install
+npm run api   # Python API on :8787, holds the key, runs the search
+npm run dev   # Vite on :5173, proxies /api to the Python server
 ```
 
-To repeat the 500-step choice-count experiments:
+Type a prompt, press **generate**, and watch the noise resolve. The right pane shows the clean estimate Jev is judging, its score, and the candidate edits for any step (scrub with the slider). When the run finishes you get the whole frame sequence as a code-block "video".
+
+## How it works
+
+The loop is a diffusion sampler in spirit. The network is replaced by random proposals plus Jev's judgment.
+
+1. **x_T: noise.** Every run starts from its own random grayscale grid (` ░▒▓█`). Seed changes the noise, and the noise changes the picture.
+2. **First estimate x₀.** Half the starting candidates are read out of the noise itself (smoothed, thresholded, largest region kept); half are one or two random strokes on a white canvas. Jev scores them all; the best becomes the estimate.
+3. **Propose edits to x₀.** Each step generates 8 candidates: generic strokes (filled ellipse, ring, rectangle, line, black or white), whole-image transforms (stretch, shift), or local denoise operators (smooth, erode, dilate, fill, threshold). Stroke size shrinks over the run but never below what Jev can perceive (about 4 px). Nothing is shape-specific; the same generator draws a circle or a duck.
+4. **Jev judges x₀ candidates.** One request scores the current estimate and every candidate on a 4-level rubric (*nothing like it → ambiguous → probably the subject → unmistakably the subject*). The best candidate must beat the current score by a margin, and then win a second, independent **head-to-head Choice** against the current frame (random order). Two disagreeing judgments = the edit is vetoed. This is what stopped the earlier drift.
+5. **Reveal.** The viewer's frame is `blend(noise, x₀, α)`; α rises over the first ~30 steps and hits 1.0 when the run ends. Intermediate shades come from the palette, so the reveal looks like denoising.
+6. **Stop.** The run ends after `--patience` steps without an accepted improvement (default 30), at `--stop-at` score, or at `--steps`.
+
+Everything Jev decides is logged: `steps.jsonl` has every candidate, its score and confidence, the head-to-head verdict, and the chosen edit.
 
 ```sh
-uv run jiffusion.py --candidates 8
-uv run jiffusion.py --candidates 2
+uv run jiffusion.py "a duck" --size 24 --steps 150 --patience 40 --seed 1
+uv run jiffusion.py "a circle" --selector jev        # one Choice per step, no scoring (older design)
+uv run jiffusion.py "a circle" --selector random     # same generator, no API calls
+uv run render_sheet.py runs/A runs/B --steps 1 10 30 100 --output sheet.png   # PNG contact sheet, no deps
 ```
 
-The 2-, 8-, and 16-choice experiments all completed with a different frame at every step after initialization. Two choices used fewer input tokens, but none of these runs produced a recognizable circle. See the [results and comparison images](validation.md).
+Run outputs: `frames.md` (every viewer frame, step 0 is the noise), `steps.jsonl`, `run.json`, `final.txt`/`final.svg` (final frame), `x0.txt` (clean estimate).
 
-`--selector random` uses the same generator and schedule without making API calls. Existing output directories are never overwritten. Completed steps are flushed to disk and the last selected frame is exported if a later call fails or you interrupt the run. Restarting creates a new run; resume is not implemented. The SDK handles transient retries.
+## Results
 
-In the earlier 32×32 experiment, a live request with 33 grids exceeded Jev's context budget. Increasing `--size` or `--candidates` can still exceed the limit. The CLI reports the error and asks you to reduce one of them. Choice accepts at most 255 options, and state plus the question must fit 32k tokens. [TypeSafe limits](https://docs.typesafe.ai/models), [Choice API](https://docs.typesafe.ai/primitives/choice)
+`a circle` from three different noise seeds (steps 1 → end, 20×20):
 
-Checks:
+![circle from noise](docs/v8-circle.png)
+
+Two of three converge to a clean circle in 33–75 steps and stop on plateau; seed 2 ends oversized. `a duck` (24×24, 150 steps) produces bird-like silhouettes rather than a duck; compositional prompts are the open problem. See [validation.md](validation.md) for the diagnostics that drove each design decision.
+
+## Checks
 
 ```sh
-uv run python -m unittest discover -s tests -v  # offline
-uv run check_recognition.py                  # six live shape-recognition requests
-uv run check_improvement.py                  # 36 live comparisons of corrupted circles
+uv run python -m unittest discover -s tests -v   # 23 offline tests, mocked Jev
+uv run check_decisions.py                       # is Jev deciding on content? shuffle-consistency, 25 calls
+uv run check_recognition.py                     # circle / cross / stripes recognition, 6 calls
+uv run check_improvement.py                     # cleaner-vs-noisier circle preference, 36 calls
 ```
 
-The live check asks Jev to distinguish a circle, cross, stripes, and noise in two candidate orders, using the same selector as the search. Its fixtures are only for evaluation; generation starts from noise. A passing recognition check does not establish that random mutation search will draw a recognizable circle. The seed controls local randomness, not remote model determinism. Jev's confidence is a selection statistic, not a measure of image quality.
-
-`check_improvement.py` uses a known 20×20 circle with 0, 1, 4, 16, 40, 80, or 160 flipped pixels. It compares adjacent corruption levels across three noise layouts and both candidate orders. Jev sees only the grids and prompt, never the corruption labels. Fixtures and results go into a new `runs/improvement-*` directory. These reference circles are only used in the diagnostic.
-
-[Validation results and earlier experiments](validation.md).
+Limits: Choice takes at most 255 options and a request must fit 32k tokens; a 20×20 grid with 8 candidates plus the current frame uses ~3k input tokens per step. [TypeSafe limits](https://docs.typesafe.ai/models)
