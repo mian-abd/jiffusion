@@ -73,6 +73,13 @@ button:disabled { opacity: 0.5; cursor: default; }
 }
 
 .codebox { border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+
+.treepanel { margin: 0 0 20px; width: 96vw; margin-left: calc(50% - 48vw); }
+.treelabel {
+  font-size: 13px; text-transform: uppercase; letter-spacing: 0.12em;
+  color: var(--dim); margin: 0 0 10px;
+}
+.treepanel .treebox { height: 72vh; border-color: var(--line); }
 .codebar {
   display: flex; justify-content: space-between; align-items: center;
   padding: 8px 12px; background: #000; border-bottom: 1px solid var(--line);

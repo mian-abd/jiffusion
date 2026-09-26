@@ -63,16 +63,25 @@ const NH = 118 // node height incl. label
 const GX = 12
 const GY = 44
 
-// Build a recursive tree: each node's children = that step's top-8 candidates,
-// and the winner is also the parent of the next level — so branches sit
-// directly under the node that picked them.
 function buildTree(gen) {
   const root = { label: 'seed noise', kids: [], seedFrame: gen.frames[0] }
   let parent = root
+  let prevWinCol = -1 // column of the last picked node, -1 = first level
   gen.perStep.forEach((st) => {
     const order = st.cands.map((_, k) => k).slice(0, 8)
     if (!order.includes(st.chosen)) order[order.length - 1] = st.chosen
-    const nodes = order.map((k) => ({
+    // Re-slot candidates so the winner lands on the opposite side of the
+    // previous pick — score-ranked fill keeps it deterministic but the path
+    // alternates left/right instead of drifting one way.
+    const winCol = prevWinCol < 4 ? 6 : 1 // alternate far side of the row
+    const others = order.filter((k) => k !== st.chosen).slice(0, 7)
+    const slots = Array(8).fill(null)
+    slots[winCol] = st.chosen
+    others.forEach((k, i) => {
+      slots[i < winCol ? i : i + 1] = k
+    })
+    prevWinCol = winCol
+    const nodes = slots.map((k) => ({
       k,
       frame: st.cands[k],
       score: st.scores[k],
@@ -81,14 +90,13 @@ function buildTree(gen) {
       kids: [],
     }))
     parent.kids = nodes
-    parent = nodes[order.indexOf(st.chosen)]
+    parent = nodes[winCol]
   })
   return root
 }
 
-// Tight row layout: at each level only the chosen node has children, so its
-// 8 kids sit in a fixed row centered under it. No recursive subtree widths —
-// losers never get pushed away by the winner's descendants.
+// Tight row layout: each level's 8 candidates sit in a fixed-pitch row
+// centered under the node that picked them — the pick zigzags left/right.
 const PITCH = NW + GX // center-to-center distance between siblings
 
 function place(node, cx, depth = 0) {
@@ -98,12 +106,13 @@ function place(node, cx, depth = 0) {
   if (node.kids.length) {
     const row = node.kids.length * PITCH - GX
     let kx = cx - row / 2 + NW / 2
-    for (const k of node.kids) {
+    node.kids.forEach((k) => {
       place(k, kx, depth + 1)
       kx += PITCH
-    }
+    })
   }
 }
+
 
 function collect(node, out = []) {
   out.push(node)
@@ -123,7 +132,13 @@ function TreeDiagram({ gen }) {
     const rootCx = (8 * PITCH - GX) / 2 // root centered over its kids' row
     place(root, rootCx)
     const nodes = collect(root)
-    nodes.forEach((n, i) => (n.id = i))
+    // Shift everything right so no node sits at negative x.
+    const minX = Math.min(...nodes.map((n) => n.x))
+    const off = minX < 8 ? 8 - minX : 0
+    nodes.forEach((n, i) => {
+      n.id = i
+      n.x += off
+    })
     const edges = nodes.flatMap((n) => n.kids.map((k) => ({ from: n, to: k })))
     const w = Math.max(...nodes.map((n) => n.x + NW)) + 8
     return { nodes, edges, vbw: w, vbh: Math.max(...nodes.map((n) => n.y)) + NH }
@@ -342,10 +357,20 @@ export default function App() {
                 </div>
               )}
             </section>
-            <section className="panel">
-              <h2>branch tree · jev's path</h2>
-              <TreeDiagram gen={gen} />
-            </section>
+          </>
+        )}
+      </main>
+
+      {gen && (
+        <section className="treepanel">
+          <div className="treelabel">branch tree · jev's path</div>
+          <TreeDiagram gen={gen} />
+        </section>
+      )}
+
+      <main>
+        {gen && (
+          <>
             {gen.done && (
               <section className="panel">
                 <h2>video · code blocks</h2>
