@@ -5,6 +5,9 @@ dist-ssr/
 .env
 .env.*
 !.env.example
+.venv/
+__pycache__/
+runs/
 
 # OS / editor
 .DS_Store

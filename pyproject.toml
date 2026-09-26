@@ -1,0 +1,9 @@
+[project]
+name = "jiffusion"
+version = "0.1.0"
+description = "Random character-grid mutations selected by Jev."
+requires-python = ">=3.11"
+dependencies = ["typesafe-sdk", "python-dotenv"]
+
+[tool.uv]
+package = false
