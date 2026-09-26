@@ -1,8 +1,8 @@
 // A frame is a grid of intensity levels 0..4.
 // 0 = space, 1 = ░, 2 = ▒, 3 = ▓, 4 = █
 export const LEVELS = [' ', '░', '▒', '▓', '█']
-export const W = 48
-export const H = 18
+export const W = 32
+export const H = 32
 
 export function makeFrame(w = W, h = H) {
   return { w, h, data: new Uint8Array(w * h) }

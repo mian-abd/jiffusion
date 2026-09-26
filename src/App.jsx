@@ -1,4 +1,5 @@
 import React, { useMemo, useState } from 'react'
+import { useEffect, useRef } from 'react'
 import { mulberry32 } from './lib/rng.js'
 import { randomFrame, copyFrame, applyFlip, toAscii } from './lib/frame.js'
 import { STEPS, stepParams } from './lib/schedule.js'
@@ -21,6 +22,22 @@ function FrameView({ f, size = 1, dim = false }) {
   )
 }
 
+// Pixel-perfect thumbnail: one filled rect per cell, green intensity scale.
+function Thumb({ f, px = 4, dim = false }) {
+  const ref = useRef(null)
+  useEffect(() => {
+    const ctx = ref.current.getContext('2d')
+    for (let y = 0; y < f.h; y++) {
+      for (let x = 0; x < f.w; x++) {
+        const v = f.data[y * f.w + x]
+        ctx.fillStyle = v === 0 ? '#0a0e0a' : `hsl(150,75%,${14 + v * 17}%)`
+        ctx.fillRect(x * px, y * px, px, px)
+      }
+    }
+  }, [f, px])
+  return <canvas ref={ref} width={f.w * px} height={f.h * px} className={dim ? 'dim' : ''} />
+}
+
 function CodeBlock({ text }) {
   const [copied, setCopied] = useState(false)
   const copy = async () => {
@@ -40,6 +57,157 @@ function CodeBlock({ text }) {
     </div>
   )
 }
+
+const NW = 104 // node width (32px cells x ~3)
+const NH = 118 // node height incl. label
+const GX = 12
+const GY = 44
+
+// Build a recursive tree: each node's children = that step's top-8 candidates,
+// and the winner is also the parent of the next level — so branches sit
+// directly under the node that picked them.
+function buildTree(gen) {
+  const root = { label: 'seed noise', kids: [], seedFrame: gen.frames[0] }
+  let parent = root
+  gen.perStep.forEach((st) => {
+    const order = st.cands.map((_, k) => k).slice(0, 8)
+    if (!order.includes(st.chosen)) order[order.length - 1] = st.chosen
+    const nodes = order.map((k) => ({
+      k,
+      frame: st.cands[k],
+      score: st.scores[k],
+      win: k === st.chosen,
+      label: st.label,
+      kids: [],
+    }))
+    parent.kids = nodes
+    parent = nodes[order.indexOf(st.chosen)]
+  })
+  return root
+}
+
+// Tight row layout: at each level only the chosen node has children, so its
+// 8 kids sit in a fixed row centered under it. No recursive subtree widths —
+// losers never get pushed away by the winner's descendants.
+const PITCH = NW + GX // center-to-center distance between siblings
+
+function place(node, cx, depth = 0) {
+  node.x = cx - NW / 2
+  node.y = depth * (NH + GY)
+  node.depth = depth
+  if (node.kids.length) {
+    const row = node.kids.length * PITCH - GX
+    let kx = cx - row / 2 + NW / 2
+    for (const k of node.kids) {
+      place(k, kx, depth + 1)
+      kx += PITCH
+    }
+  }
+}
+
+function collect(node, out = []) {
+  out.push(node)
+  node.kids.forEach((k) => collect(k, out))
+  return out
+}
+
+function TreeDiagram({ gen }) {
+  const [tx, setTx] = useState(8)
+  const [ty, setTy] = useState(8)
+  const [scale, setScale] = useState(1)
+  const svgRef = useRef(null)
+  const drag = useRef(null)
+
+  const { nodes, edges, vbw, vbh } = useMemo(() => {
+    const root = buildTree(gen)
+    const rootCx = (8 * PITCH - GX) / 2 // root centered over its kids' row
+    place(root, rootCx)
+    const nodes = collect(root)
+    nodes.forEach((n, i) => (n.id = i))
+    const edges = nodes.flatMap((n) => n.kids.map((k) => ({ from: n, to: k })))
+    const w = Math.max(...nodes.map((n) => n.x + NW)) + 8
+    return { nodes, edges, vbw: w, vbh: Math.max(...nodes.map((n) => n.y)) + NH }
+  }, [gen])
+  // Fit the whole tree into view on first render.
+  useEffect(() => {
+    const box = svgRef.current?.parentElement
+    if (!box) return
+    const s = Math.min(1, (box.clientWidth - 16) / vbw, (box.clientHeight - 16) / vbh)
+    setScale(s)
+    setTx((box.clientWidth - vbw * s) / 2)
+    setTy(8)
+  }, [vbw, vbh])
+
+
+  const onDown = (e) => {
+    drag.current = { x: e.clientX, y: e.clientY, tx, ty }
+    e.currentTarget.setPointerCapture(e.pointerId)
+  }
+  const onMove = (e) => {
+    if (!drag.current) return
+    setTx(drag.current.tx + e.clientX - drag.current.x)
+    setTy(drag.current.ty + e.clientY - drag.current.y)
+  }
+  const onUp = () => (drag.current = null)
+  const onWheel = (e) => {
+    e.preventDefault()
+    const rect = svgRef.current.getBoundingClientRect()
+    const mx = e.clientX - rect.left
+    const my = e.clientY - rect.top
+    const ns = Math.min(3, Math.max(0.2, scale * (e.deltaY > 0 ? 0.9 : 1.1)))
+    // keep the cursor's graph point fixed while zooming
+    setTx(mx - ((mx - tx) / scale) * ns)
+    setTy(my - ((my - ty) / scale) * ns)
+    setScale(ns)
+  }
+
+  return (
+    <div className="treebox">
+      <svg
+        ref={svgRef}
+        className="treecanv"
+        width={vbw}
+        height={vbh}
+        onPointerDown={onDown}
+        onPointerMove={onMove}
+        onPointerUp={onUp}
+        onPointerLeave={onUp}
+        onWheel={onWheel}
+      >
+        <g transform={`translate(${tx} ${ty}) scale(${scale})`}>
+          {edges.map((e, i) => {
+            const x1 = e.from.x + NW / 2
+            const y1 = e.from.y + NH - 26
+            const x2 = e.to.x + NW / 2
+            const y2 = e.to.y
+            const mid = y1 + GY / 2
+            return (
+              <path
+                key={i}
+                className={`edge${e.to.win ? ' hot' : ''}`}
+                d={`M ${x1} ${y1} V ${mid} H ${x2} V ${y2}`}
+              />
+            )
+          })}
+          {nodes.map((n) => (
+            <g key={n.id} className={`tnode${n.win ? ' win' : ''}`}>
+              <foreignObject x={n.x} y={n.y} width={NW} height={NH - 26}>
+                <div className="timg">
+                  {n.seedFrame ? <Thumb f={n.seedFrame} px={3} /> : <Thumb f={n.frame} px={3} />}
+                </div>
+              </foreignObject>
+              <text x={n.x + NW / 2} y={n.y + NH - 12} className="tscore">
+                {n.seedFrame ? 'seed' : `${n.win ? '✓ ' : ''}${n.score.toFixed(2)}`}
+              </text>
+            </g>
+          ))}
+        </g>
+      </svg>
+      <div className="treehint">drag to pan · scroll to zoom · <b>hot</b> = jev's pick</div>
+    </div>
+  )
+}
+
 
 export default function App() {
   const [genPrompt, setGenPrompt] = useState('a dungeon corridor, torch light')
@@ -167,12 +335,16 @@ export default function App() {
                   <div className="cands">
                     {show.cands.slice(0, 8).map((c, k) => (
                       <div className={`cand${k === show.chosen ? ' win' : ''}`} key={k}>
-                        <FrameView f={c} size={0.5} dim={k !== show.chosen} />
+                        <Thumb f={c} px={3} dim={k !== show.chosen} />
                       </div>
                     ))}
                   </div>
                 </div>
               )}
+            </section>
+            <section className="panel">
+              <h2>branch tree · jev's path</h2>
+              <TreeDiagram gen={gen} />
             </section>
             {gen.done && (
               <section className="panel">
