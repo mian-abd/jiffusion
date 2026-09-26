@@ -15,7 +15,7 @@ function FrameView({ f, size = 1, dim = false }) {
   return (
     <pre
       className={`frame${dim ? ' dim' : ''}`}
-      style={{ color: `hsl(150,75%,${light}%)`, fontSize: `${size * 12}px`, lineHeight: '1em' }}
+      style={{ color: `hsl(0,0%,${light}%)`, fontSize: `${size * 12}px`, lineHeight: '1em' }}
     >
       {toAscii(f)}
     </pre>
@@ -30,7 +30,7 @@ function Thumb({ f, px = 4, dim = false }) {
     for (let y = 0; y < f.h; y++) {
       for (let x = 0; x < f.w; x++) {
         const v = f.data[y * f.w + x]
-        ctx.fillStyle = v === 0 ? '#0a0e0a' : `hsl(150,75%,${14 + v * 17}%)`
+        ctx.fillStyle = v === 0 ? '#050505' : `hsl(0,0%,${14 + v * 17}%)`
         ctx.fillRect(x * px, y * px, px, px)
       }
     }
