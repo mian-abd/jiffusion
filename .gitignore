@@ -71,3 +71,5 @@ runs/
 .vscode/*
 !.vscode/extensions.json
 .idea/
+.vercel
+.env*

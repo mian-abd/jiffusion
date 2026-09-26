@@ -268,12 +268,19 @@ export default function App() {
     setShown(null)
     setRunning(true)
     try {
-      const { id } = await api('/api/runs', {
+      const res = await api('/api/runs', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ prompt, seed, size, steps, candidates, patience, selector }),
       })
-      setRunId(id)
+      if (res.steps) { // serverless mode: the whole run comes back in one response
+        setRunState({ settings: res.settings, steps: res.steps, noise: res.noise, done: true, error: res.error })
+        setRunId(res.id)
+        setRunning(false)
+        if (res.error) setErr(res.error)
+      } else {
+        setRunId(res.id)
+      }
     } catch (e) {
       setErr(e.message)
       setRunning(false)
@@ -281,7 +288,7 @@ export default function App() {
   }
 
   useEffect(() => {
-    if (!runId) return
+    if (!runId || runId === 'vercel') return // 'vercel' runs arrive complete, nothing to poll
     let from = 0
     let acc = { settings: null, steps: [], noise: null, done: false, error: null }
     const tick = async () => {
